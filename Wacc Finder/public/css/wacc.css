@@ -33,11 +33,11 @@
 }
 
 .bg-wacc-brown {
-    background-color: #4f3f21;
+  background-color: #4f3f21;
 }
 
 .text-wacc-color {
-    color: #b5914f;
+  color: #b5914f;
 }
 
 .spacer.spacer-50 {
@@ -237,4 +237,57 @@ ul {
   padding-right: 60px;
   box-shadow: 0px 0px 30px 0px rgba(0, 44, 122, 0.13);
   background: #ffffff;
+}
+
+@media only screen and (max-width: 600px) {
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  #hero h1 {
+    line-height: 110%;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgb(29, 46, 59);
+    text-align: center;
+  }
+
+  #hero iframe {
+    height: 230px;
+    width: 100%;
+    margin-inline: auto;
+    display: block;
+  }
+
+  #hero .w-75 {
+    width: 100% !important;
+  }
+
+  .spacer.spacer-50 {
+    height: unset;
+  }
+
+  #why-wacc .col-lg-6:first-child {
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+  }
+
+  #customers-to-you .custom-card {
+    padding: 50px 0px;
+  }
+
+  #customers-to-you .custom-card:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
+  #customers-to-you .custom-card:nth-child(even) .col-lg-6:first-child {
+    margin-top: 3rem;
+  }
+
+  #customers-to-you .custom-card:nth-child(odd) .col-lg-6:first-child {
+    margin-bottom: 3rem;
+  }
 }
