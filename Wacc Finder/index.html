@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="./public/css/app.css" />
-    <link rel="stylesheet" type="text/css" href="./public/css/wacc.css" />
+    <link rel="stylesheet" type="text/css" href="./public/css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,10 +27,10 @@
   </head>
   <body>
     <!-- Navbar -->
-    <header class="p-3">
+    <header id="header" class="p-3">
       <div class="container">
         <div
-          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+          class="d-flex flex-wrap align-items-center justify-content-between justify-content-lg-start"
         >
           <a
             href="/"
@@ -40,13 +40,13 @@
           </a>
 
           <ul
-            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+            class="nav col-6 col-lg-auto ms-lg-auto pe-lg-4 mb-2 justify-content-center mb-md-0 d-none d-lg-flex"
           >
             <li><a href="#" class="nav-link px-2">Home</a></li>
           </ul>
 
           <div class="text-end">
-            <button type="button" class="btn btn-brown-gold">Sign-up</button>
+            <a class="btn btn-lg btn-brown-gold">Get Started</a>
           </div>
         </div>
       </div>
@@ -64,28 +64,28 @@
               </h4>
               <h1>Meet WACCFinder™.</h1>
               <p>
-                Getting Cost Of Capital Calculations The Can Pass An Accounting
-                Regulator’s Review Is What We Do Best
+                Getting Cost of Capital Calculations the can pass an accounting
+                regulator’s review is what we do best
               </p>
               <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
-                >Start Your Free trial Today</a
+                >Start Your Free Trial Today</a
               >
-              <small
+              <small class="wacc-btn-sub"
                 >Get Started In Less Than 60 Seconds • Cancel Anytime</small
               >
             </div>
           </div>
 
           <div class="row w-100 mx-auto mt-5 text-center">
-            <div class="col-lg-4">
+            <div class="col-md-6 col-lg-4">
               <i class="fas fa-check-circle"></i>
               <span>Zero Business Valuation Skills Needed</span>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-6 col-lg-4">
               <i class="fas fa-check-circle"></i>
               <span>Works For Every Type Of Business</span>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-12 col-lg-4 mt-3 mt-m-lg-0">
               <i class="fas fa-check-circle"></i>
               <span>Calculate Cost of Capital Like A Pro</span>
             </div>
@@ -93,10 +93,10 @@
 
           <div class="row mt-5">
             <div class="col-12">
-              <h4 class="iframe-heading">
+              <!-- <h4 class="iframe-heading">
                 <i class="far fa-play-circle"></i> &nbsp; Learn More In The
                 Video Below And Get Started Today!
-              </h4>
+              </h4> -->
               <iframe
                 src="https://player.vimeo.com/video/137857207"
                 title="Vimeo video"
@@ -182,14 +182,14 @@
                 World Class Auditors, Professional Accountants & Business
                 Valuers Love Using WACCFinder™
               </h2>
-              <h4 class="subheading">See For Yourself…</h4>
+              <h4 class="subheading mb-5">See For Yourself…</h4>
             </div>
           </div>
 
           <div class="spacer spacer-50"></div>
 
           <div class="row mt-5">
-            <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
               <div class="card border rounded">
                 <div class="m-3 position-relative">
                   <img
@@ -207,7 +207,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
               <div class="card border rounded">
                 <div class="m-3 position-relative">
                   <img
@@ -225,7 +225,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="col-lg-4 mt-md-10 mb-4 mb-lg-0">
               <div class="card border rounded">
                 <div class="m-3 position-relative">
                   <img
@@ -248,7 +248,7 @@
           <div class="row mt-5">
             <div class="col-12">
               <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
-                >Start Your Free trial Today</a
+                >Start Your Free Trial Today</a
               >
               <small class="wacc-btn-sub"
                 >Get Started In Less Than 60 Seconds • Cancel Anytime</small
@@ -342,7 +342,7 @@
                 Then Sign Up For WACCFinder™ Free Trial Today!
               </h3>
               <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
-                >Start Your Free trial Today</a
+                >Start Your Free Trial Today</a
               >
               <small class="wacc-btn-sub"
                 >Get Started In Less Than 60 Seconds • Cancel Anytime</small
@@ -368,11 +368,6 @@
               <p>
                 We’re the first ever easiest to use, Cost of Capital platform
                 designed for non valuation professionals!
-              </p>
-              <p><b>That’s Where ‘WACCFinder™’ Comes In.</b></p>
-              <p>
-                WACCFinder™ is like your ‘24/7 business valuer’ to benchmark
-                your Client’s cost of capital calculations anytime.
               </p>
               <p>
                 If you’ve ever tried to calculate WACC online… chances are — you
@@ -439,10 +434,7 @@
             <div class="col-lg-6">
               <img src="public/images/wacc.jpeg" class="img-fluid" />
               <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
-                >Start Your Free trial Today</a
-              >
-              <small class="wacc-btn-sub"
-                ><a href="#">Learn More About Websites →</a></small
+                >Start Your Free Trial Today</a
               >
             </div>
           </div>
@@ -451,7 +443,7 @@
             <div class="col-lg-6">
               <img src="public/images/wacc.jpeg" class="img-fluid" />
               <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
-                >Start Your Free trial Today</a
+                >Start Your Free Trial Today</a
               >
             </div>
             <div class="col-lg-6 ps-lg-5">
@@ -501,10 +493,7 @@
             <div class="col-lg-6">
               <img src="public/images/wacc.jpeg" class="img-fluid" />
               <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
-                >Start Your Free trial Today</a
-              >
-              <small class="wacc-btn-sub"
-                ><a href="#">Learn More About Websites →</a></small
+                >Start Your Free Trial Today</a
               >
             </div>
           </div>
@@ -513,7 +502,7 @@
             <div class="col-lg-6">
               <img src="public/images/wacc.jpeg" class="img-fluid" />
               <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
-                >Start Your Free trial Today</a
+                >Start Your Free Trial Today</a
               >
             </div>
             <div class="col-lg-6 ps-lg-5">
@@ -564,10 +553,7 @@
             <div class="col-lg-6">
               <img src="public/images/wacc.jpeg" class="img-fluid" />
               <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
-                >Start Your Free trial Today</a
-              >
-              <small class="wacc-btn-sub"
-                ><a href="#">Learn More About Websites →</a></small
+                >Start Your Free Trial Today</a
               >
             </div>
           </div>
@@ -594,7 +580,7 @@
                 Try WACCFinder™ Today And Witness The Awesomeness For Yourself
               </h3>
               <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
-                >Start Your Free trial Today</a
+                >Start Your Free Trial Today</a
               >
               <small class="wacc-btn-sub"
                 >Get Started In Less Than 60 Seconds • Cancel Anytime</small
@@ -615,25 +601,25 @@
           </div>
 
           <div class="row mt-4 row-gap-3">
-            <div class="col-6 col-lg-3 px-4">
+            <div class="col-6 col-md-3 col-lg-3 px-4">
               <img
                 src="https://statics.myclickfunnels.com/image/32442/file/ae8045d4b888fbaed3dadefe33733fa0.svg"
                 class="img-fluid"
               />
             </div>
-            <div class="col-6 col-lg-3 px-4">
+            <div class="col-6 col-md-3 col-lg-3 px-4">
               <img
                 src="https://statics.myclickfunnels.com/image/32442/file/ae8045d4b888fbaed3dadefe33733fa0.svg"
                 class="img-fluid"
               />
             </div>
-            <div class="col-6 col-lg-3 px-4">
+            <div class="col-6 col-md-3 col-lg-3 px-4">
               <img
                 src="https://statics.myclickfunnels.com/image/32442/file/ae8045d4b888fbaed3dadefe33733fa0.svg"
                 class="img-fluid"
               />
             </div>
-            <div class="col-6 col-lg-3 px-4">
+            <div class="col-6 col-md-3 col-lg-3 px-4">
               <img
                 src="https://statics.myclickfunnels.com/image/32442/file/ae8045d4b888fbaed3dadefe33733fa0.svg"
                 class="img-fluid"
@@ -659,7 +645,7 @@
           </div>
 
           <div class="row row-gap-5 mt-5">
-            <div class="col-lg-4">
+            <div class="col-md-6 col-lg-4">
               <a class="mklbItem" data-youtube-id="EQX16pKVJCE">
                 <img
                   src="https://images.clickfunnels.com/cdn-cgi/image/width=2600,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103721/file/2ff9bc44eaba8b3200c48d135a6d475a.jpg"
@@ -669,7 +655,7 @@
               <h5 class="fw-bold text-center mt-3">James P. Friel</h5>
               <p class="text-center">B2B</p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-6 col-lg-4">
               <a class="mklbItem" data-youtube-id="EQX16pKVJCE">
                 <img
                   src="https://images.clickfunnels.com/cdn-cgi/image/width=2600,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103722/file/76857155aef94aa3995d2cb70d639f1d.jpg"
@@ -679,7 +665,7 @@
               <h5 class="fw-bold text-center mt-3">James P. Friel</h5>
               <p class="text-center">B2B</p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-6 col-lg-4">
               <a class="mklbItem" data-youtube-id="EQX16pKVJCE">
                 <img
                   src="https://images.clickfunnels.com/cdn-cgi/image/width=2600,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103723/file/d6dee19ceb35307334437a5740016e1a.jpg"
@@ -689,7 +675,7 @@
               <h5 class="fw-bold text-center mt-3">James P. Friel</h5>
               <p class="text-center">B2B</p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-6 col-lg-4">
               <a class="mklbItem" data-youtube-id="EQX16pKVJCE">
                 <img
                   src="https://images.clickfunnels.com/cdn-cgi/image/width=2600,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103724/file/106d4eb6a6232e440c348b01cc442357.jpg"
@@ -699,7 +685,7 @@
               <h5 class="fw-bold text-center mt-3">James P. Friel</h5>
               <p class="text-center">B2B</p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-6 col-lg-4">
               <a class="mklbItem" data-youtube-id="EQX16pKVJCE">
                 <img
                   src="https://images.clickfunnels.com/cdn-cgi/image/width=2600,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103725/file/3a93acb86ca7d12ba7405787edba17cb.jpg"
@@ -709,7 +695,7 @@
               <h5 class="fw-bold text-center mt-3">James P. Friel</h5>
               <p class="text-center">B2B</p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-6 col-lg-4">
               <a class="mklbItem" data-youtube-id="EQX16pKVJCE">
                 <img
                   src="https://images.clickfunnels.com/cdn-cgi/image/width=2600,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103728/file/71d1f18c65986fcb2754e8968ddc9b74.jpg"
@@ -723,19 +709,9 @@
 
           <div class="row justify-content-center mt-5">
             <div class="col-lg-9">
-              <small class="text-center d-block"
-                >**Testimonials shown are real experiences from paying users of
-                WACCFinder™. Their results are not typical and your experience
-                will vary based upon your effort, education, business model, and
-                market forces beyond our control. Please note that WACCFinder™
-                is not a business opportunity. WACCFinder™ is a website and
-                funnel builder that helps businesses sell their products and
-                services online. We make no earnings claims or return on
-                investment claims, and you may not make your money back.**
-              </small>
 
               <a href="#" class="btn btn-brown-gold wacc-btn mt-5"
-                >Start Your Free trial Today</a
+                >Start Your Free Trial Today</a
               >
               <small class="wacc-btn-sub"
                 >Get Started In Less Than 60 Seconds • Cancel Anytime</small
@@ -747,7 +723,7 @@
       <!-- Video Section Ends -->
 
       <!-- Award Section -->
-      <section id="award" class="wacc-padding bg-wacc-brown">
+      <section id="award" class="wacc-padding bg-wacc-blue-black">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-12">
@@ -763,22 +739,22 @@
           </div>
 
           <div class="row my-4 row-gap-4">
-            <div class="col-lg-4">
+            <div class="col-md-6 col-lg-4">
               <img
                 src="https://images.clickfunnels.com/cdn-cgi/image/width=400,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103739/file/73d948be58db82146d5ebbcad33085f2.jpg"
                 class="img-fluid"
               />
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-6 col-lg-4">
               <img
                 src="https://images.clickfunnels.com/cdn-cgi/image/width=400,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103739/file/73d948be58db82146d5ebbcad33085f2.jpg"
                 class="img-fluid"
               />
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-12 col-lg-4">
               <img
                 src="https://images.clickfunnels.com/cdn-cgi/image/width=400,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103739/file/73d948be58db82146d5ebbcad33085f2.jpg"
-                class="img-fluid"
+                class="img-fluid w-md-100"
               />
             </div>
           </div>
@@ -789,7 +765,7 @@
                 Will You Be Next? Start Your 14-Day WACCFinder™ Trial Today!
               </h3>
               <a href="#" class="btn btn-brown-gold wacc-btn mt-5"
-                >Start Your Free trial Today</a
+                >Start Your Free Trial Today</a
               >
               <small class="wacc-btn-sub text-white"
                 >Get Started In Less Than 60 Seconds • Cancel Anytime</small
@@ -897,12 +873,10 @@
 
     <!-- footer -->
     <footer
-      class="d-inline-flex flex-column justify-content-center align-items-center p-5 bg-eerie-black mt-5"
+      class="d-inline-flex flex-column justify-content-center align-items-center p-5 bg-wacc-blue-black mt-5"
     >
       <div class="d-flex container-fluid justify-content-between">
-        <p class="text-white">
-          &copy; 2023 All rights reserved. Vallaris Private Limited
-        </p>
+        <p class="text-white">All rights reserved. Vallaris Private Limited</p>
         <img
           src="./public/images/footer_vector.png"
           alt="footer_logo"
@@ -924,5 +898,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/mklb.js"></script>
+    <script src="public/js/main.js"></script>
   </body>
 </html>
