@@ -16,7 +16,7 @@
       rel="stylesheet"
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="./public/css/app.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./public/css/app.css" /> -->
     <link rel="stylesheet" type="text/css" href="./public/css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,130 +31,55 @@
   </head>
   <body>
     <!-- Navbar -->
-    <header id="header" class="p-3">
-      <div class="container">
-        <div
-          class="d-flex flex-wrap align-items-center justify-content-between justify-content-lg-start"
-        >
-          <a
-            href="/"
-            class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none w-25"
+    <header id="header" class="p-lg-3">
+      <nav class="navbar navbar-expand-lg" aria-label="Fourth navbar example">
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><img src="public/images/logo.png" class="img-fluid logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarsExample04"
+            aria-controls="navbarsExample04"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <img src="public/images/logo.png" class="img-fluid" />
-          </a>
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-          <ul
-            class="nav col-6 col-lg-auto ms-lg-auto pe-lg-4 mb-2 justify-content-center mb-md-0 d-none d-lg-flex"
-          >
-            <li><a href="#" class="nav-link px-2">Home</a></li>
-          </ul>
-
-          <div class="text-end">
+          <div class="collapse navbar-collapse" id="navbarsExample04">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Dropdown</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
             <a class="btn btn-lg btn-brown-gold">Get Started</a>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
 
-    <div id="mobile-navbar" class="d-block d-md-none">
-      <nav class="mobile-footer" role="menulist">
-        <a
-          href="#!"
-          role="menuitem"
-          class="active"
-          aria-describedby="nav-current"
-        >
-          <svg aria-hidden="true">
-            <use xlink:href="#home-icon"></use>
-          </svg>
-          Home
-        </a>
-        <a href="#!" role="menuitem">
-          <svg>
-            <use xlink:href="#bookmark-icon"></use>
-          </svg>
-          Favorites
-        </a>
-        <a href="#!" role="menuitem">
-          <svg aria-hidden="true">
-            <use xlink:href="#plus-icon"></use>
-          </svg>
-          Add
-        </a>
-        <a href="#!" role="menuitem">
-          <svg aria-hidden="true">
-            <use xlink:href="#user-icon"></use>
-          </svg>
-          User
-        </a>
-        <a href="#!" role="menuitem">
-          <svg aria-hidden="true">
-            <use xlink:href="#settings-icon"></use>
-          </svg>
-          Settings
-        </a>
-        <i class="line" id="nav-current">current item</i>
-      </nav>
-
-      <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-        <symbol id="home-icon" viewBox="0 0 9 9">
-          <path
-            d="M7.7 8.5c.3 0 .5-.2.5-.5V3.5c0-.1-.1-.3-.2-.4L4.8.6c-.2-.1-.5-.1-.7 0L1 3.1c-.1.1-.2.3-.2.4V8c0 .3.2.5.5.5h6.4zm-4.8-1h-1V3.8l2.6-2.1 2.6 2.1v3.7H2.9z"
-          />
-        </symbol>
-        <symbol id="favorites-icon" viewBox="0 0 9 9">
-          <path
-            d="M4.2 8.4C3.8 8 .5 5.2.5 3 .5 1.6 1.6.5 2.9.5c.6 0 1.2.3 1.6.6.4-.4 1-.6 1.6-.6C7.4.5 8.5 1.6 8.5 3c0 2.2-3.3 5-3.7 5.3-.2.2-.5.2-.6.1zM2.9 1.5c-.7 0-1.4.7-1.4 1.5 0 1.1 1.8 3.1 3 4.3 1.1-1 3-3 3-4.3 0-.8-.6-1.5-1.4-1.5-.5 0-.9.3-1.2.7-.2.3-.6.3-.8 0-.3-.4-.7-.7-1.2-.7z"
-          />
-        </symbol>
-        <symbol id="settings-icon" viewBox="0 0 9 9">
-          <path
-            d="M8.2 5.5l-.7-.4c.1-.4.1-.8 0-1.1l.7-.4c.1 0 .1-.1.1-.2-.2-.7-.5-1.2-.9-1.6-.1-.1-.2-.1-.2 0l-.7.3c-.3-.2-.6-.4-1-.6V.8c0-.1-.1-.2-.2-.2C4.7.5 4.1.5 3.5.6c-.1 0-.2.1-.2.2v.8c-.4.1-.7.3-1 .6l-.5-.5h-.2c-.4.5-.7 1-.9 1.6 0 .1 0 .2.1.2l.7.4c-.1.4-.1.8 0 1.1l-.7.5c-.1 0-.1.1-.1.2.2.6.5 1.1.9 1.5.1.1.2.1.2 0l.7-.4c.3.2.6.4 1 .6v.8c0 .1.1.2.2.2.6.1 1.2.1 1.8 0 .1 0 .2-.1.2-.2v-.8c.4-.1.7-.3 1-.6l.7.4h.2c.4-.4.7-.9.9-1.5-.2-.1-.2-.2-.3-.2zm-3.7.3c-.7 0-1.3-.6-1.3-1.3s.6-1.3 1.3-1.3 1.3.6 1.3 1.3-.6 1.3-1.3 1.3z"
-          />
-        </symbol>
-        <symbol id="plus-icon" viewBox="0 0 9 9">
-          <path
-            d="M4.9 2.5h-.8v1.6H2.5v.8h1.6v1.6h.8V4.9h1.6v-.8H4.9V2.5zm-.4-2c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 7.2c-1.8 0-3.2-1.4-3.2-3.2s1.4-3.2 3.2-3.2 3.2 1.4 3.2 3.2-1.4 3.2-3.2 3.2z"
-          />
-        </symbol>
-        <symbol id="bookmark-icon" viewBox="0 0 9 9">
-          <path
-            d="M2.3.5h4.4c.5 0 .9.4.9.9v7.1L4.5 7.2 1.4 8.5V1.4c0-.5.4-.9.9-.9zm2.2 5.7l2.2 1V1.4H2.3v5.8l2.2-1z"
-          />
-        </symbol>
-        <symbol id="user-icon" viewBox="0 0 9 9">
-          <path
-            d="M5.9 5.3c-.4 0-.7.3-1.4.3s-1-.3-1.4-.3c-1.2 0-2.1.9-2.1 2v.4c0 .4.3.8.8.8h5.5c.4 0 .7-.3.7-.7v-.5c0-1.1-.9-2-2.1-2zm1.4 2.5H1.8v-.5c0-.7.6-1.3 1.3-1.3.2 0 .6.3 1.4.3.8 0 1.2-.3 1.4-.3.7 0 1.3.6 1.3 1.3v.5zM4.5 5c1.2 0 2.3-1 2.3-2.3S5.8.4 4.5.4s-2.3 1-2.3 2.3S3.3 5 4.5 5zm0-3.7c.8 0 1.5.6 1.5 1.5s-.7 1.5-1.5 1.5S3 3.6 3 2.8s.7-1.5 1.5-1.5z"
-          />
-        </symbol>
-      </svg>
-      <!-- <nav class="nav">
-        <a href="#" class="nav-item is-active">
-          <i class="bx bx-heart"></i>
-          <span>Favorites</span>
-        </a>
-        <a href="#" class="nav-item">
-          <i class="bx bx-home"></i>
-          <span>Home</span>
-        </a>
-        <a href="#" class="nav-item">
-          <i class="bx bx-basket"></i>
-          <span>Order</span>
-        </a>
-        <a href="#" class="nav-item">
-          <i class="bx bx-basket"></i>
-          <span>Order</span>
-        </a>
-        <a href="#" class="nav-item">
-          <i class="bx bx-basket"></i>
-          <span>Order</span>
-        </a>
-
-        <div class="nav-indicator-wrapper">
-          <span class="nav-indicator"></span>
-        </div>
-      </nav> -->
-    </div>
     <!-- Navbar end -->
 
     <main>
@@ -171,16 +96,18 @@
                 Getting Cost of Capital Calculations the can pass an accounting
                 regulator’s review is what we do best
               </p>
-              <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
-                >Start Your Free Trial Today</a
-              >
-              <small class="wacc-btn-sub"
-                >Get Started In Less Than 60 Seconds • Cancel Anytime</small
-              >
+              <div class="d-none d-lg-block">
+                <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
+                  >Start Your Free Trial Today</a
+                >
+                <small class="wacc-btn-sub"
+                  >Get Started In Less Than 60 Seconds • Cancel Anytime</small
+                >
+              </div>
             </div>
           </div>
 
-          <div class="row w-100 mx-auto mt-5 text-center">
+          <div class="row w-100 mx-auto mt-5 text-center d-none d-lg-flex">
             <div class="col-md-6 col-lg-4">
               <i class="fas fa-check-circle"></i>
               <span>Zero Business Valuation Skills Needed</span>
@@ -189,13 +116,13 @@
               <i class="fas fa-check-circle"></i>
               <span>Works For Every Type Of Business</span>
             </div>
-            <div class="col-md-12 col-lg-4 mt-3 mt-m-lg-0">
+            <div class="col-md-12 col-lg-4 mt-3 mt-lg-0">
               <i class="fas fa-check-circle"></i>
               <span>Calculate Cost of Capital Like A Pro</span>
             </div>
           </div>
 
-          <div class="row mt-5">
+          <div class="row mt-lg-5">
             <div class="col-12">
               <!-- <h4 class="iframe-heading">
                 <i class="far fa-play-circle"></i> &nbsp; Learn More In The
@@ -206,10 +133,19 @@
                 title="Vimeo video"
                 allowfullscreen
               ></iframe>
+
+              <div class="d-block d-lg-none mb-5">
+                <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
+                  >Start Your Free Trial Today</a
+                >
+                <small class="wacc-btn-sub"
+                  >Get Started In Less Than 60 Seconds • Cancel Anytime</small
+                >
+              </div>
             </div>
           </div>
 
-          <div class="row custom-card row-gap-3">
+          <div class="row custom-card row-gap-3 d-none d-lg-flex">
             <div class="col-lg-2 col-md-4 col-6">
               <img
                 class="img-fluid mb-3"
@@ -293,7 +229,7 @@
           <div class="spacer spacer-50"></div>
 
           <div class="row mt-5 row-gap-5">
-            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="col-lg-4 mb-5 mb-lg-0">
               <div class="card border rounded">
                 <div class="m-3 position-relative">
                   <img
@@ -311,7 +247,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="col-lg-4 mb-5 mb-lg-0">
               <div class="card border rounded">
                 <div class="m-3 position-relative">
                   <img
@@ -329,7 +265,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 mt-md-10 mb-4 mb-lg-0">
+            <div class="col-lg-4">
               <div class="card border rounded">
                 <div class="m-3 position-relative">
                   <img
@@ -349,7 +285,7 @@
             </div>
           </div>
 
-          <div class="row mt-5">
+          <div class="row mt-2 mt-lg-5">
             <div class="col-12">
               <a href="#" class="btn btn-brown-gold wacc-btn mt-4"
                 >Start Your Free Trial Today</a
@@ -405,39 +341,95 @@
             <div class="col-lg-4 mb-4 mb-lg-0">
               <div class="card p-4 box-shadow-card">
                 <h4 class="text-center fw-bolder">WITHOUT WACCFINDER™</h4>
-                <ul class="fw-bold mt-3 lh-lg">
-                  <li>Don’t Know Where & How to Start!</li>
-                  <li>Expensive</li>
-                  <li>Slow</li>
-                  <li>Not aligned With International Best Practices</li>
-                  <li>Unverifiable Inputs</li>
-                  <li>Confusing</li>
-                  <li>Frustrating</li>
-                  <li>Time Consuming</li>
+                <ul class="fw-bold mt-3 lh-lg list-unstyled">
+                  <li>
+                    <i class="fas fa-times-circle text-danger"></i>&nbsp;Don’t
+                    Know Where & How to Start!
+                  </li>
+                  <li>
+                    <i class="fas fa-times-circle text-danger"></i
+                    >&nbsp;Expensive
+                  </li>
+                  <li>
+                    <i class="fas fa-times-circle text-danger"></i>&nbsp;Slow
+                  </li>
+                  <li>
+                    <i class="fas fa-times-circle text-danger"></i>&nbsp;Not
+                    aligned With International Best Practices
+                  </li>
+                  <li>
+                    <i class="fas fa-times-circle text-danger"></i
+                    >&nbsp;Unverifiable Inputs
+                  </li>
+                  <li>
+                    <i class="fas fa-times-circle text-danger"></i
+                    >&nbsp;Confusing
+                  </li>
+                  <li>
+                    <i class="fas fa-times-circle text-danger"></i
+                    >&nbsp;Frustrating
+                  </li>
+                  <li>
+                    <i class="fas fa-times-circle text-danger"></i>&nbsp;Time
+                    Consuming
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="card p-4 box-shadow-card">
                 <h4 class="text-center fw-bold">WITH WACCFINDER™</h4>
-                <ul class="fw-bold mt-3 lh-lg">
-                  <li>Guided Tool</li>
-                  <li>Affordable</li>
-                  <li>Instant</li>
-                  <li>Aligned With International Best Practices</li>
-                  <li>Verifiable Inputs</li>
-                  <li>Simple to Use</li>
-                  <li>Easy to Understand</li>
-                  <li>Save Records for Reference</li>
-                  <li>Adjust Inputs Easily</li>
-                  <li>Signed Reports</li>
-                  <li>Book Consultation With Expert</li>
+                <ul class="fw-bold mt-3 lh-lg list-unstyled">
+                  <li>
+                    <i class="fas fa-check-circle text-wacc-color"></i
+                    >&nbsp;Guided Tool
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-wacc-color"></i
+                    >&nbsp;Affordable
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-wacc-color"></i
+                    >&nbsp;Instant
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-wacc-color"></i
+                    >&nbsp;Aligned With International Best Practices
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-wacc-color"></i
+                    >&nbsp;Verifiable Inputs
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-wacc-color"></i
+                    >&nbsp;Simple to Use
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-wacc-color"></i
+                    >&nbsp;Easy to Understand
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-wacc-color"></i
+                    >&nbsp;Save Records for Reference
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-wacc-color"></i
+                    >&nbsp;Adjust Inputs Easily
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-wacc-color"></i
+                    >&nbsp;Signed Reports
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-wacc-color"></i
+                    >&nbsp;Book Consultation With Expert
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="row justify-content-center mt-4 mb-5">
+          <div class="row justify-content-center mt-4 mb-lg-5">
             <div class="col-lg-7">
               <h4 class="subheading text-center">
                 Do You Like Feeling The Opposite Of Frustration?
@@ -678,7 +670,16 @@
             </div>
           </div>
 
-          <div class="row justify-content-center mt-4 mb-5">
+          <div class="row justify-content-center mt-5">
+            <div class="col-lg-12 text-center">
+              <img
+                src="public/images/grid-placeholder.png"
+                class="img-fluid w-100"
+              />
+            </div>
+          </div>
+
+          <div class="row justify-content-center mt-5 mb-lg-5">
             <div class="col-lg-8">
               <h3 class="text-center">
                 Try WACCFinder™ Today And Witness The Awesomeness For Yourself
@@ -813,7 +814,7 @@
 
           <div class="row justify-content-center mt-5">
             <div class="col-lg-9">
-              <a href="#" class="btn btn-brown-gold wacc-btn mt-5"
+              <a href="#" class="btn btn-brown-gold wacc-btn"
                 >Start Your Free Trial Today</a
               >
               <small class="wacc-btn-sub"
@@ -826,35 +827,35 @@
       <!-- Video Section Ends -->
 
       <!-- Award Section -->
-      <!-- <section id="award" class="wacc-padding bg-wacc-blue-black">
+      <section id="award" class="wacc-padding bg-wacc-blue-black">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-12">
               <h2 class="text-center text-wacc-color">
-                Could You Be The Next ‘Two Comma Club’ Award Winner?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Mollitia!
               </h2>
               <p class="text-center text-white w-75 mx-auto">
-                To date, WACCFinder™ has helped 2,096 entrepreneurs, small
-                business owners, creators, teachers, coaches, and influencers
-                receive a ‘Two Comma Club’ Award for their funnel!
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Laudantium quia voluptates nihil dolorum quaerat nobis?
               </p>
             </div>
           </div>
 
-          <div class="row my-4 row-gap-4">
-            <div class="col-md-6 col-lg-4">
+          <div class="row my-4 row-gap-4 justify-content-center">
+            <div class="col-md-8 col-lg-4">
               <img
                 src="https://images.clickfunnels.com/cdn-cgi/image/width=400,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103739/file/73d948be58db82146d5ebbcad33085f2.jpg"
-                class="img-fluid"
+                class="img-fluid w-md-100"
               />
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-8 col-lg-4">
               <img
                 src="https://images.clickfunnels.com/cdn-cgi/image/width=400,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103739/file/73d948be58db82146d5ebbcad33085f2.jpg"
-                class="img-fluid"
+                class="img-fluid w-md-100"
               />
             </div>
-            <div class="col-md-12 col-lg-4">
+            <div class="col-md-8 col-lg-4">
               <img
                 src="https://images.clickfunnels.com/cdn-cgi/image/width=400,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/image/103739/file/73d948be58db82146d5ebbcad33085f2.jpg"
                 class="img-fluid w-md-100"
@@ -865,7 +866,7 @@
           <div class="row justify-content-center mt-5">
             <div class="col-12">
               <h3 class="text-center text-white">
-                Will You Be Next? Start Your 14-Day WACCFinder™ Trial Today!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe!
               </h3>
               <a href="#" class="btn btn-brown-gold wacc-btn mt-5"
                 >Start Your Free Trial Today</a
@@ -876,11 +877,11 @@
             </div>
           </div>
         </div>
-      </section> -->
+      </section>
       <!-- Award Section Ends -->
 
       <!-- FAQ Section -->
-      <section id="faq" class="wacc-padding pt-2">
+      <section id="faq" class="wacc-padding">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-6">
@@ -975,12 +976,12 @@
     </main>
 
     <!-- footer -->
-    <footer id="footer" class="py-5 p-md-5 bg-wacc-blue-black">
+    <footer id="footer" class="py-5 p-lg-5 bg-wacc-blue-black">
       <div class="container">
         <div class="row align-items-center row-gap-4">
           <div class="col-12 col-md-6">
             <p class="text-white text-center text-md-left m-0">
-              All rights reserved. Vallaris Private Limited
+              &copy; Vallaris Private Limited. All rights reserved.
             </p>
           </div>
           <div
