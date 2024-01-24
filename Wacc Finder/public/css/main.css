@@ -227,6 +227,9 @@ header .nav-link:hover {
   box-shadow: 0px 0px 30px 0px rgba(0, 44, 122, 0.13);
   background: #ffffff;
 }
+#customers-to-you .card {
+  border: 0;
+}
 
 @media only screen and (min-width: 768px) {
   #footer .footer-logo {
