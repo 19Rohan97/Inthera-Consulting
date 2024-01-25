@@ -25,7 +25,7 @@ body {
 }
 
 .bg-wacc-gradient.left-top {
-  background-image: linear-gradient(180deg, #d6e7ee 49%, rgba(214, 231, 238, 0.4) 100%);
+  background-image: linear-gradient(270deg, #d6e7ee 49%, rgba(214, 231, 238, 0.4) 100%);
   background-position: left top;
 }
 
@@ -85,7 +85,7 @@ body {
 h2 {
   font-weight: 900;
   letter-spacing: -0.05rem;
-  line-height: 120%;
+  line-height: 1.4em;
   font-size: 3rem;
   color: rgb(29, 46, 59);
 }
@@ -93,18 +93,19 @@ h2 {
 h3 {
   font-weight: 900;
   letter-spacing: -0.05rem;
-  line-height: 120%;
+  line-height: 1.4em;
   font-size: 2.5rem;
   color: rgb(29, 46, 59);
 }
 
 p,
-ul {
+ul,
+ol {
   color: #000;
   font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 150%;
+  line-height: 1.4em;
 }
 
 .subheading {
@@ -130,6 +131,9 @@ header .nav-link {
 }
 header .nav-link:hover {
   color: #b5914f;
+}
+header .navbar-toggler {
+  border: 0;
 }
 
 #hero {
@@ -308,11 +312,21 @@ header .nav-link:hover {
   #customers-to-you .custom-card:nth-child(even) .col-lg-6:first-child {
     margin-top: 0rem;
   }
+  #customers-to-you .custom-card:nth-child(even) .col-lg-6:first-child .card {
+    padding-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   #customers-to-you .custom-card:nth-child(odd) {
     flex-direction: column-reverse;
   }
   #customers-to-you .custom-card:nth-child(odd) .col-lg-6:first-child {
     margin-bottom: 0rem;
+  }
+  #customers-to-you .custom-card:nth-child(odd) .col-lg-6:last-child .card {
+    padding-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   #customers-to-you .card {
     padding: 1.5rem;
@@ -324,12 +338,13 @@ header .nav-link:hover {
 }
 @media only screen and (max-width: 500px) {
   h2 {
-    font-size: 1.45rem;
-    line-height: 130%;
+    font-size: 1.55rem;
+    line-height: 1.4em;
   }
   h3 {
-    font-size: 1.3rem;
-    line-height: 130%;
+    font-size: 1.4rem;
+    line-height: 1.4em;
+    margin-bottom: 1rem;
   }
   .subheading {
     font-size: 1.125rem;
