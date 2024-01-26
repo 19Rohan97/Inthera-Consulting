@@ -321,20 +321,22 @@ header {
 
 @media only screen and (max-width: 992px) {
   header {
-    .navbar-toggler {
-      position: relative;
-      z-index: 10;
-    }
     #wacc-mobile-menu {
       position: fixed;
       top: 0;
       left: 0;
-      &.show {
-        display: flex;
+      .navbar-toggler {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
       }
-      flex-direction: column-reverse;
-      align-items: center;
-      justify-content: flex-end;
+      .wacc-mobile-menu-body {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: flex-end;
+      }
       padding: 2rem;
       padding-top: 4rem;
       background: #fff;
