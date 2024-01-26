@@ -138,8 +138,13 @@ header .nav-link:hover {
 }
 header .navbar-toggler {
   border: 0;
+  box-shadow: unset !important;
 }
-
+header #hamburger-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
 #hero {
   padding-top: 5rem;
 }
@@ -265,6 +270,49 @@ header .navbar-toggler {
     margin-bottom: 3rem;
   }
 }
+@media only screen and (max-width: 992px) {
+  header .navbar-toggler {
+    position: relative;
+    z-index: 10;
+  }
+  header #wacc-mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem;
+    padding-top: 4rem;
+    background: #fff;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 9;
+  }
+  header #wacc-mobile-menu.show {
+    display: flex;
+  }
+  header #wacc-mobile-menu .navbar-nav {
+    margin: 0 !important;
+    width: 100%;
+  }
+  header #wacc-mobile-menu .navbar-nav .nav-link {
+    font-weight: 600;
+  }
+  header #wacc-mobile-menu .navbar-nav a {
+    font-size: 1.2rem;
+  }
+  header #wacc-mobile-menu .navbar-nav .dropdown-menu {
+    border: 0;
+  }
+  header #wacc-mobile-menu .btn {
+    width: 100%;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    box-shadow: 0px 4px 8px 0px rgba(0, 28, 56, 0.15);
+    border-radius: 3px;
+  }
+}
 @media only screen and (max-width: 768px) {
   h2 {
     font-size: 2.2rem;
@@ -377,6 +425,35 @@ header .navbar-toggler {
   }
   .wacc-btn {
     font-size: 1.2rem;
+  }
+  #love-using-wacc .container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  #love-using-wacc .card {
+    border: 0;
+    box-shadow: 0px 0px 40px 0px rgba(0, 44, 122, 0.2);
+    text-align: center;
+  }
+  #why-wacc .container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  #why-wacc h3 {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+  #why-wacc .card {
+    border: 0;
+    box-shadow: 0px 0px 40px 0px rgba(0, 44, 122, 0.2);
+  }
+  #customers-to-you .row:nth-child(1) {
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+  }
+  #customers-to-you .row:nth-child(3) {
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
   }
 }
 
