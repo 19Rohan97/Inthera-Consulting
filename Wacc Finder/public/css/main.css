@@ -141,6 +141,22 @@ p {
   box-shadow: 0px 0px 40px 0px rgba(0, 44, 122, 0.1);
 }
 
+.list-position-inside {
+  list-style-position: outside;
+}
+
+.uncheck-icon-list li::marker {
+  content: "\f057";
+  font-family: "Font Awesome 5 Free";
+  color: #DC3545;
+}
+
+.check-icon-list li::marker {
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  color: #b5914f;
+}
+
 header .logo {
   width: 100%;
   max-width: 200px;
@@ -361,6 +377,9 @@ header #hamburger-icon {
   .w-25 {
     width: 50% !important;
   }
+  .subheading {
+    line-height: 1.5em;
+  }
   #hero h1 {
     line-height: 110%;
     font-size: 2.6rem;
@@ -458,6 +477,8 @@ header #hamburger-icon {
   }
   .wacc-btn {
     max-width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .container {
     padding-right: 1rem;
