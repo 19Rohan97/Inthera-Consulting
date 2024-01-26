@@ -546,7 +546,7 @@ header {
     margin-bottom: 1rem;
   }
   .subheading {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
   .wacc-btn {
     max-width: 320px;
@@ -560,9 +560,11 @@ header {
     padding-top: 3rem;
     h1 {
       font-size: 2rem;
+      margin: 0.5rem 0 1rem;
     }
     p {
-      font-size: 1rem;
+      font-size: 1.05rem;
+      font-weight: 500;
     }
     iframe {
       height: 230px;
