@@ -39,6 +39,14 @@ body {
   background-color: #121820;
 }
 
+.bg-wacc-azure-white {
+  background-color: #d6e7ee;
+}
+
+.bg-wacc-pale-cerulean {
+  background-color: rgba(151, 202, 219, 0.6);
+}
+
 .text-wacc-color {
   color: #b5914f;
 }

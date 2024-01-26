@@ -1,6 +1,7 @@
 $blue-black: #121820;
 $brown-gold: #b5914f;
 $azure-white: #d6e7ee;
+$pale-cerulean: rgb(151, 202, 219, 0.6);
 
 body {
   background: #ffffff;
@@ -48,6 +49,14 @@ body {
 
 .bg-wacc-blue-black {
   background-color: $blue-black;
+}
+
+.bg-wacc-azure-white {
+  background-color: $azure-white;
+}
+
+.bg-wacc-pale-cerulean {
+  background-color: $pale-cerulean;
 }
 
 .text-wacc-color {
