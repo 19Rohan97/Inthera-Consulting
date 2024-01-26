@@ -105,8 +105,11 @@ body {
   max-width: 1170px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
 h2 {
-  font-weight: 900;
   letter-spacing: -0.05rem;
   line-height: 1.4em;
   font-size: 3rem;
@@ -114,7 +117,6 @@ h2 {
 }
 
 h3 {
-  font-weight: 900;
   letter-spacing: -0.05rem;
   line-height: 1.4em;
   font-size: 2.5rem;
@@ -412,6 +414,10 @@ header {
     padding-left: 1.5rem;
   }
 
+  .w-25 {
+    width: 50% !important;
+  }
+
   #hero {
     h1 {
       line-height: 110%;
@@ -486,19 +492,15 @@ header {
       border: 0;
     }
   }
-
-  #footer {
-    padding-bottom: 8rem !important;
-  }
 }
 
 @media only screen and (max-width: 500px) {
   h2 {
-    font-size: 1.55rem;
+    font-size: 1.65rem;
     line-height: 1.4em;
   }
   h3 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     line-height: 1.4em;
     margin-bottom: 1rem;
   }
@@ -573,6 +575,17 @@ header {
         padding-right: 1.2rem;
         padding-left: 1.2rem;
       }
+      &.mobile-padding {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+  }
+
+  #top-brands, #video-section, #award, #faq {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 }
