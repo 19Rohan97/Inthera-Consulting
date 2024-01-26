@@ -393,7 +393,7 @@ header #hamburger-icon {
     padding-right: calc(var(--bs-gutter-x) * 0.5);
   }
   #customers-to-you .custom-card {
-    padding: 50px 30px;
+    padding: 50px 15px;
     margin-left: 0;
     margin-right: 0;
   }
