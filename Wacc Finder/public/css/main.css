@@ -25,7 +25,7 @@ body {
 }
 
 .bg-wacc-gradient.left-top {
-  background-image: linear-gradient(270deg, #d6e7ee 49%, rgba(214, 231, 238, 0.4) 100%);
+  background-image: linear-gradient(180deg, #d6e7ee -85%, rgba(214, 231, 238, 0.4) 100%);
   background-position: left top;
 }
 
@@ -58,7 +58,7 @@ body {
 .wacc-btn {
   display: block;
   width: 100%;
-  max-width: 360px;
+  max-width: 390px;
   margin: 0 auto;
   font-size: 1.5rem;
   font-weight: 800;
@@ -73,6 +73,12 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
   box-shadow: 0px 4px 16px 2px rgba(0, 44, 122, 0.2);
+}
+.wacc-btn i {
+  color: #fff !important;
+}
+.wacc-btn:hover i {
+  color: #b5914f !important;
 }
 
 .wacc-btn-sub {
@@ -123,14 +129,30 @@ ol {
   line-height: 1.4em;
 }
 
+ul,
+ol {
+  font-size: 1rem;
+}
+
+ul li {
+  text-indent: 4px;
+}
+ul li::marker {
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  color: #b5914f;
+  font-weight: bold;
+}
+
 p {
   margin-bottom: 0.6rem;
 }
 
 .subheading {
-  font-style: italic;
   color: #b5914f;
+  font-weight: bold;
   font-family: "Libre Baskerville", serif;
+  text-transform: capitalize;
 }
 
 .wacc-padding {
@@ -152,6 +174,7 @@ p {
   content: "\f057";
   font-family: "Font Awesome 5 Free";
   color: #dc3545;
+  font-weight: bold;
 }
 
 .check-icon-list li {
@@ -161,6 +184,7 @@ p {
   content: "\f058";
   font-family: "Font Awesome 5 Free";
   color: #b5914f;
+  font-weight: bold;
 }
 
 header .logo {
@@ -277,8 +301,16 @@ header #hamburger-icon {
   box-shadow: 0px 0px 30px 0px rgba(0, 44, 122, 0.13);
   background: #ffffff;
 }
+#customers-to-you .custom-card .wacc-btn {
+  font-size: 1.2rem;
+  max-width: 290px;
+  padding: 8px 10px;
+}
 #customers-to-you .card {
   border: 0;
+}
+#customers-to-you .row .h-100 img {
+  height: 100%;
 }
 
 @media only screen and (min-width: 992px) {
@@ -375,6 +407,13 @@ header #hamburger-icon {
   }
   .wacc-padding {
     padding: 4rem 0;
+  }
+  .wacc-btn {
+    font-size: 1rem !important;
+    max-width: 260px !important;
+  }
+  .wacc-btn-sub {
+    font-size: 0.68rem;
   }
   .container {
     padding-right: 1.5rem;
@@ -530,6 +569,10 @@ header #hamburger-icon {
   #why-wacc .card {
     border: 0;
     box-shadow: 0px 0px 40px 0px rgba(0, 44, 122, 0.2);
+  }
+  #why-wacc .card ul {
+    font-size: 0.9rem;
+    padding-left: 1rem;
   }
   #customers-to-you .row:nth-child(1) {
     padding-right: 1.2rem;

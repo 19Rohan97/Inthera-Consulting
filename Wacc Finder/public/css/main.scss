@@ -34,8 +34,8 @@ body {
 
 .bg-wacc-gradient.left-top {
   background-image: linear-gradient(
-    270deg,
-    $azure-white 49%,
+    180deg,
+    #d6e7ee -85%,
     rgba(214, 231, 238, 0.4) 100%
   );
   background-position: left top;
@@ -72,7 +72,7 @@ body {
 .wacc-btn {
   display: block;
   width: 100%;
-  max-width: 360px;
+  max-width: 390px;
   margin: 0 auto;
   font-size: 1.5rem;
   font-weight: 800;
@@ -88,6 +88,16 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
   box-shadow: 0px 4px 16px 2px rgba(0, 44, 122, 0.2);
+
+  i {
+    color: #fff !important;
+  }
+
+  &:hover {
+    i {
+      color: $brown-gold !important;
+    }
+  }
 }
 
 .wacc-btn-sub {
@@ -138,14 +148,33 @@ ol {
   line-height: 1.4em;
 }
 
+ul,
+ol {
+  font-size: 1rem;
+}
+
+ul {
+  li {
+    text-indent: 4px;
+    &::marker {
+      content: "\f105 ";
+      font-family: "Font Awesome 5 Free";
+      color: $brown-gold;
+      font-weight: bold;
+    }
+  }
+}
+
 p {
   margin-bottom: 0.6rem;
 }
 
 .subheading {
-  font-style: italic;
+  // font-style: italic;
   color: #b5914f;
+  font-weight: bold;
   font-family: "Libre Baskerville", serif;
+  text-transform: capitalize;
 }
 
 .wacc-padding {
@@ -167,6 +196,7 @@ p {
       content: "\f057 ";
       font-family: "Font Awesome 5 Free";
       color: #dc3545;
+      font-weight: bold;
     }
   }
 }
@@ -178,6 +208,7 @@ p {
       content: "\f058";
       font-family: "Font Awesome 5 Free";
       color: $brown-gold;
+      font-weight: bold;
     }
   }
 }
@@ -315,9 +346,22 @@ header {
     padding-right: 60px;
     box-shadow: 0px 0px 30px 0px rgba(0, 44, 122, 0.13);
     background: #ffffff;
+    .wacc-btn {
+      font-size: 1.2rem;
+      max-width: 290px;
+      padding: 8px 10px;
+    }
   }
   .card {
     border: 0;
+  }
+
+  .row {
+    .h-100 {
+      img {
+        height: 100%;
+      }
+    }
   }
 }
 
@@ -441,6 +485,14 @@ header {
 
   .wacc-padding {
     padding: 4rem 0;
+  }
+
+  .wacc-btn {
+    font-size: 1rem !important;
+    max-width: 260px !important;
+  }
+  .wacc-btn-sub {
+    font-size: 0.68rem;
   }
 
   .container {
@@ -637,6 +689,10 @@ header {
     .card {
       border: 0;
       box-shadow: 0px 0px 40px 0px rgb(0 44 122 / 20%);
+      ul {
+        font-size: 0.9rem;
+        padding-left: 1rem;
+      }
     }
   }
 
