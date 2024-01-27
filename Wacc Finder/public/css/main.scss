@@ -162,16 +162,18 @@ p {
 
 .uncheck-icon-list {
   li {
+    text-indent: 10px;
     &::marker {
       content: "\f057 ";
       font-family: "Font Awesome 5 Free";
-      color: #DC3545;
+      color: #dc3545;
     }
   }
 }
 
 .check-icon-list {
   li {
+    text-indent: 10px;
     &::marker {
       content: "\f058";
       font-family: "Font Awesome 5 Free";

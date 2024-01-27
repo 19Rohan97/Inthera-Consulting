@@ -145,12 +145,18 @@ p {
   list-style-position: outside;
 }
 
+.uncheck-icon-list li {
+  text-indent: 10px;
+}
 .uncheck-icon-list li::marker {
   content: "\f057";
   font-family: "Font Awesome 5 Free";
-  color: #DC3545;
+  color: #dc3545;
 }
 
+.check-icon-list li {
+  text-indent: 10px;
+}
 .check-icon-list li::marker {
   content: "\f058";
   font-family: "Font Awesome 5 Free";
