@@ -9,15 +9,15 @@ body {
 }
 
 .btn-brown-gold {
-  background-color: #b5914f;
+  background-color: rgb(181, 145, 79);
   color: #fff;
-  border: 1px solid #b5914f;
+  border: 1px solid rgb(181, 145, 79);
 }
 
 .btn-brown-gold:hover {
   background-color: #fff;
-  color: #b5914f;
-  border: 1px solid #b5914f;
+  color: rgb(181, 145, 79);
+  border: 1px solid rgb(181, 145, 79);
 }
 
 .bg-wacc-gradient {
@@ -48,7 +48,7 @@ body {
 }
 
 .text-wacc-color {
-  color: #b5914f;
+  color: rgb(181, 145, 79);
 }
 
 .spacer .spacer-50 {
@@ -78,7 +78,7 @@ body {
   color: #fff !important;
 }
 .wacc-btn:hover i {
-  color: #b5914f !important;
+  color: rgb(181, 145, 79) !important;
 }
 
 .wacc-btn-sub {
@@ -134,16 +134,6 @@ ol {
   font-size: 1rem;
 }
 
-ul li {
-  text-indent: 4px;
-}
-ul li::marker {
-  content: "\f105";
-  font-family: "Font Awesome 5 Free";
-  color: #b5914f;
-  font-weight: bold;
-}
-
 p {
   margin-bottom: 0.6rem;
 }
@@ -183,7 +173,7 @@ p {
 .check-icon-list li::marker {
   content: "\f058";
   font-family: "Font Awesome 5 Free";
-  color: #b5914f;
+  color: rgb(181, 145, 79);
   font-weight: bold;
 }
 
@@ -195,11 +185,14 @@ header .nav-link {
   color: #121820;
 }
 header .nav-link:hover {
-  color: #b5914f;
+  color: rgb(181, 145, 79);
 }
 header .navbar-toggler {
   border: 0;
   box-shadow: unset !important;
+}
+header .navbar-toggler .navbar-toggler-icon {
+  background-image: url(../images/download.svg);
 }
 header #hamburger-icon {
   display: inline-block;
@@ -306,6 +299,19 @@ header #hamburger-icon {
   max-width: 290px;
   padding: 8px 10px;
 }
+#customers-to-you .custom-card li {
+  list-style: none !important;
+  position: relative;
+  text-indent: 0;
+}
+#customers-to-you .custom-card li::before {
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  color: rgb(181, 145, 79);
+  font-weight: bold;
+  position: absolute;
+  left: -15px;
+}
 #customers-to-you .card {
   border: 0;
 }
@@ -351,6 +357,9 @@ header #hamburger-icon {
   }
 }
 @media only screen and (max-width: 992px) {
+  header {
+    background-color: #121820;
+  }
   header #wacc-mobile-menu {
     position: fixed;
     top: 0;
@@ -531,6 +540,10 @@ header #hamburger-icon {
   }
   #hero {
     padding-top: 3rem;
+  }
+  #hero .mobile-padding {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
   }
   #hero h1 {
     font-size: 2rem;

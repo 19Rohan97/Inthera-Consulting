@@ -1,5 +1,5 @@
 $blue-black: #121820;
-$brown-gold: #b5914f;
+$brown-gold: rgb(181, 145, 79);
 $azure-white: #d6e7ee;
 $pale-cerulean: rgb(151, 202, 219, 0.6);
 
@@ -153,17 +153,19 @@ ol {
   font-size: 1rem;
 }
 
-ul {
-  li {
-    text-indent: 4px;
-    &::marker {
-      content: "\f105 ";
-      font-family: "Font Awesome 5 Free";
-      color: $brown-gold;
-      font-weight: bold;
-    }
-  }
-}
+// main {
+//   ul {
+//     li {
+//       text-indent: 4px;
+//       &::marker {
+//         content: "\f105 ";
+//         font-family: "Font Awesome 5 Free";
+//         color: $brown-gold;
+//         font-weight: bold;
+//       }
+//     }
+//   }
+// }
 
 p {
   margin-bottom: 0.6rem;
@@ -227,6 +229,9 @@ header {
   .navbar-toggler {
     border: 0;
     box-shadow: unset !important;
+    .navbar-toggler-icon {
+      background-image: url(../images/download.svg);
+    }
   }
 
   #hamburger-icon {
@@ -351,6 +356,19 @@ header {
       max-width: 290px;
       padding: 8px 10px;
     }
+    li {
+      list-style: none !important;
+      position: relative;
+      text-indent: 0;
+      &::before {
+        content: "\f105 ";
+        font-family: "Font Awesome 5 Free";
+        color: $brown-gold;
+        font-weight: bold;
+        position: absolute;
+        left: -15px;
+      }
+    }
   }
   .card {
     border: 0;
@@ -421,6 +439,7 @@ header {
 
 @media only screen and (max-width: 992px) {
   header {
+    background-color: $blue-black;
     #wacc-mobile-menu {
       position: fixed;
       top: 0;
@@ -642,6 +661,10 @@ header {
 
   #hero {
     padding-top: 3rem;
+    .mobile-padding {
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+    }
     h1 {
       font-size: 2rem;
       margin: 0.5rem 0 1rem;
