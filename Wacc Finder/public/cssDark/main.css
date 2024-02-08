@@ -55,7 +55,7 @@ body {
 }
 
 .text-white {
-  color: #d6e7ee !important;
+  color: #fff !important;
 }
 
 .text-dark {
@@ -121,20 +121,20 @@ h2 {
   letter-spacing: -0.05rem;
   line-height: 1.4em;
   font-size: 3rem;
-  color: #d6e7ee;
+  color: #fff;
 }
 
 h3 {
   letter-spacing: -0.05rem;
   line-height: 1.4em;
   font-size: 2.5rem;
-  color: #d6e7ee;
+  color: #fff;
 }
 
 p,
 ul,
 ol {
-  color: #8a8a8a;
+  color: #fff;
   font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: 0;
@@ -222,7 +222,7 @@ header #hamburger-icon {
   line-height: 110%;
   font-size: 6rem;
   font-weight: 900;
-  color: #d6e7ee;
+  color: #fff;
   text-align: center;
 }
 #hero p {
@@ -230,7 +230,7 @@ header #hamburger-icon {
   letter-spacing: 0;
   line-height: 140%;
   font-size: 2rem;
-  color: #d6e7ee;
+  color: #fff;
   text-align: center;
   width: 100%;
   max-width: 931px;
