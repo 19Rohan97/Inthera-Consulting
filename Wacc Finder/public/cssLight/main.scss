@@ -7,8 +7,8 @@ $azure-white: #d6e7ee;
 $wacc-red: #f54b1a;
 $pale-cerulean: rgb(151, 202, 219, 0.6);
 
-// $text-color: #8a8a8a;
-$text-color: #fff;
+$text-color: #353535;
+// $text-color: #fff;
 
 body {
   background: #ffffff;
@@ -139,14 +139,14 @@ h2 {
   letter-spacing: -0.05rem;
   line-height: 1.4em;
   font-size: 3rem;
-  color: #fff;
+  color: $blue-black;
 }
 
 h3 {
   letter-spacing: -0.05rem;
   line-height: 1.4em;
   font-size: 2.5rem;
-  color: #fff;
+  color: $blue-black;
 }
 
 p,
@@ -265,7 +265,7 @@ header {
     line-height: 110%;
     font-size: 6rem;
     font-weight: 900;
-    color: #fff;
+    color: $blue-black;
     text-align: center;
   }
 
@@ -274,7 +274,7 @@ header {
     letter-spacing: 0;
     line-height: 140%;
     font-size: 2rem;
-    color: #fff;
+    color: $text-color;
 
     text-align: center;
     width: 100%;
