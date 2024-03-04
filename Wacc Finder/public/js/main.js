@@ -53,24 +53,57 @@
   }
 })();
 
-// const indicator = document.querySelector(".nav-indicator-wrapper");
-// const items = document.querySelectorAll(".nav-item");
+/**
+ * Sticky Header
+ */
+// Check if the element with ID 'main_header' exists before adding scroll event listener
+if (document.getElementById("main_header")) {
+  window.addEventListener("scroll", function () {
+    var header = document.getElementById("main_header");
+    var scrollPosition = window.scrollY;
 
-// function handleIndicator(el) {
-//   items.forEach((item) => {
-//     item.classList.remove("is-active");
-//   });
+    // Add or remove 'fixed' class based on scroll position
+    if (scrollPosition > 1) {
+      // Example threshold, adjust as needed
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
+    }
+  });
+}
 
-//   indicator.style.width = `${el.offsetWidth}px`;
-//   indicator.style.left = `${el.offsetLeft}px`;
+// Function to get user initials
+function getUserInitials(name) {
+  var initials = name.match(/\b\w/g) || [];
+  initials = ((initials.shift() || "") + (initials.pop() || "")).toUpperCase();
+  return initials;
+}
 
-//   el.classList.add("is-active");
-// }
+$(document).ready(function () {
+  if ($("#login")) {
+    // password validation
+    $("#password").keyup(function () {
+      var pass = $("#password").val();
+      var cpass = $("#cpass").val();
 
-// items.forEach((item) => {
-//   item.addEventListener("click", (e) => {
-//     handleIndicator(item);
-//   });
+      if (pass != "") {
+        $("#error-pass").text("");
+        error = false;
+        $("#pass").removeClass("box_error");
+      }
+    });
+  }
+  if ($("#account")) {
+    // Get user's full name from the element with class "full-name"
+    var fullName = $(".full-name").text();
 
-//   item.classList.contains("is-active") && handleIndicator(item);
-// });
+    // Get user initials
+    var initials = getUserInitials(fullName);
+
+    // Create image element with initials as text
+    var img = $('<div class="pp"></div>').text(initials);
+
+    // Append image to the div with id "avatar"
+    $("#pp").append(img);
+  }
+});
