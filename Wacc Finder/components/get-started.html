@@ -29,7 +29,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
     />
   </head>
-  <body id="get-started">
+  <body>
     <header id="main_header">
       <div class="container">
         <div class="row">
@@ -52,80 +52,10 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="wacc-menu-toggler">
-                  <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                  <ul class="navbar-nav ms-auto mt-4 mt-md-0 mb-2 mb-md-0">
                     <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="notification.html"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        data-bs-custom-class="custom-tooltip"
-                        data-bs-title="Notifications"
-                      >
-                        <img
-                          src="../public/images/Navbar/ic-head-notif.svg"
-                          alt=""
-                        />
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="help-centre.html"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        data-bs-custom-class="custom-tooltip"
-                        data-bs-title="Help Centre"
-                      >
-                        <img
-                          src="../public/images/Navbar/ic-head-mail.svg"
-                          alt=""
-                        />
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="video-tutorial.html"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        data-bs-custom-class="custom-tooltip"
-                        data-bs-title="Video Tutorials"
-                      >
-                        <img
-                          src="../public/images/Navbar/header-menu-video.svg"
-                          alt=""
-                        />
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="wacc-result.html"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        data-bs-custom-class="custom-tooltip"
-                        data-bs-title="WACC Finder"
-                      >
-                        <img
-                          src="../public/images/Navbar/ic-head-orders.svg"
-                          alt=""
-                        />
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="account.html"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        data-bs-custom-class="custom-tooltip"
-                        data-bs-title="Account"
-                      >
-                        <img
-                          src="../public/images/Navbar/header-menu-account.svg"
-                          alt=""
-                        />
+                      <a class="nav-link btn btn-brown-gold" href="login.html">
+                        Sign In
                       </a>
                     </li>
                   </ul>
@@ -138,78 +68,433 @@
     </header>
 
     <main class="main">
-      <section>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-7"></div>
-            <div class="col-lg-5">
-              <h3 class="text-center">Your WACC Calculation</h3>
-              <p class="text-center">
-                Complete the questions and your calculation will appear here
-              </p>
-              <div class="rumus mt-5">
-                <div class="rumus__item multiplication">
-                  <div class="circle">
-                    <div class="text">
-                      <span>Cost of Equity</span>
-                    </div>
-                    <div style="display: none" class="value value-text-debt">
-                      <span class="span-text-debt">0%</span>
-                    </div>
+      <div class="plan" id="get-started">
+        <section class="plan__header">
+          <div class="container">
+            <a class="btn__back" href="/"
+              ><img
+                src="http://127.0.0.1:8000/wacc/images/ic-chevrons-left.svg"
+                alt="img"
+            /></a>
+            <div class="row justify-content-center">
+              <div class="col-lg-6">
+                <div class="section__heading text-center">
+                  <h1>Select your plan</h1>
+                </div>
+                <div class="section__subtitle text-center">
+                  <p>
+                    Access our exclusive cost of capital platform with simple,
+                    <br />pay-as-you-go pricing you can cancel anytime.
+                  </p>
+                </div>
+                <form
+                  action="http://127.0.0.1:8000/change-currency"
+                  method="post"
+                >
+                  <input
+                    type="hidden"
+                    name="_token"
+                    value="1H22st4ssbfMD218Asvxojk6ABAviyeBTn7xQ8ZE"
+                  />
+                  <div class="switch-prices">
+                    <span>Display prices in SGD</span>
+                    <label class="switch">
+                      <input
+                        type="hidden"
+                        name="type"
+                        value="UHJvZmVzc2lvbmFsIEFjY291bnRhbnQgaW4gQnVzaW5lc3M="
+                      />
+                      <input
+                        type="checkbox"
+                        class="slide-price"
+                        checked="checked"
+                        name="currency"
+                        value="1"
+                        onchange="this.form.submit()"
+                      /><span class="slider round"></span>
+                    </label>
                   </div>
-                  <div class="circle">
-                    <div class="text">
-                      <span>% Equity</span>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="plan__packets">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <div class="plan__card matchs">
+                  <div class="plan__card-title" style="height: 128px">
+                    <span><p>Free to try for as long as you’d like</p></span>
+                  </div>
+                  <div class="plan__card-body matchr">
+                    <div class="plan__card-heading">
+                      <h2>Free</h2>
+                      <div class="price">$0</div>
                     </div>
-                    <div style="display: none" class="value value-text-debt">
-                      <span class="span-text-debt">0%</span>
+                    <div class="plan__card-list">
+                      <ul>
+                        <li>Display results in real time</li>
+                        <li>Retrieve stored data quicky</li>
+                        <li>Store up to 2&nbsp;calculations</li>
+                        <li>Classic WACC Formula</li>
+                        <li>Video tutorials</li>
+                        <li>Help &amp; Support FAQ</li>
+                      </ul>
+                    </div>
+                    <div class="plan__card-btn matchb">
+                      <a
+                        class="btn btn__primary btn__block"
+                        href="http://127.0.0.1:8000/new-register?type=UHJvZmVzc2lvbmFsIEFjY291bnRhbnQgaW4gQnVzaW5lc3M=&amp;plan=free"
+                        >Get Started</a
+                      >
                     </div>
                   </div>
                 </div>
-                <div class="addition">+</div>
-                <div class="rumus__item multiplication">
-                  <div class="circle">
-                    <div class="text text-debt_percent">
-                      <span>Cost of Debt</span>
-                    </div>
-                    <div
-                      style="display: none"
-                      class="value value-text-debt_percent"
-                    >
-                      <span class="span-text-debt_percent">0%</span>
-                    </div>
+              </div>
+              <div class="col-md-4">
+                <div class="plan__card matchs higlight">
+                  <div class="plan__card-title" style="height: 128px">
+                    <p>
+                      Most popular!<br />
+                      WACCFinder<sup>TM</sup>&nbsp;PDF with citations for all
+                      sources used. Unlock exclusive training videos.
+                    </p>
                   </div>
-                  <div class="circle">
-                    <div class="text text-debt_percent">
-                      <span>% debt</span>
+                  <div class="plan__card-body matchr">
+                    <div class="plan__card-heading">
+                      <h2>Business</h2>
+                      <div class="price">$200/month</div>
                     </div>
-                    <div
-                      style="display: none"
-                      class="value value-text-debt_percent"
-                    >
-                      <span class="span-text-debt_percent">0%</span>
+                    <div class="plan__card-list">
+                      <ul>
+                        <li>Display results in real time</li>
+                        <li>Retrieve stored data quicky</li>
+                        <li>Store up to 2&nbsp;calculations<sup>2</sup></li>
+                        <li>Extended WACC Formula<sup>3</sup></li>
+                        <li>
+                          Select risk-free<sup>1</sup>&nbsp;countries and
+                          non-risk-free countries
+                        </li>
+                        <li>
+                          Blend multi-currency or multi-country inputs<sup
+                            >4</sup
+                          >
+                        </li>
+                        <li>Retrieve industry beta</li>
+                        <li>Video tutorials</li>
+                        <li>Help &amp; Support FAQ</li>
+                        <li>
+                          Add a Chartered Valuer and Appraiser signed PDF report
+                          at $549
+                          <ul>
+                            <li>WACC with data visualization</li>
+                            <li>
+                              Input assumptions
+                              <ul>
+                                <li>Guideline public companies</li>
+                                <li>Calculates Hamada adjusted beta</li>
+                                <li>Country risk premium</li>
+                                <li>Small cap premium</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          Bonus training videos (free access with paid
+                          subscription)
+                          <ul>
+                            <li>
+                              How valuers calculate WACC<br />
+                              1hr, worth $2,000<br />
+                              <a href="https://youtu.be/yAoLSRbwxL8"
+                                >View video trailer</a
+                              >
+                            </li>
+                            <li>
+                              How to negotiate WACC<br />
+                              1hr, worth $2,000<br />
+                              <a href="https://youtu.be/yAoLSRbwxL8"
+                                >View video trailer</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li>Starting from 1 member</li>
+                      </ul>
+                    </div>
+
+                    <div class="plan__card-btn matchb">
+                      <a
+                        class="btn btn__primary btn__block"
+                        href="http://127.0.0.1:8000/new-register?type=UHJvZmVzc2lvbmFsIEFjY291bnRhbnQgaW4gQnVzaW5lc3M=&amp;plan=business"
+                        >Get Started</a
+                      >
                     </div>
                   </div>
                 </div>
-                <div class="equals">=</div>
-                <div class="rumus__item">
-                  <div class="circle">
-                    <div class="text text-debt_percent">
-                      <span>WACC</span>
+              </div>
+              <div class="col-md-4">
+                <div class="plan__card matchs">
+                  <div class="plan__card-title" style="height: 128px">
+                    <p>Buy more, save more.</p>
+                  </div>
+                  <div class="plan__card-body matchr">
+                    <div class="plan__card-heading">
+                      <h2>Enterprise</h2>
+                      <div class="price">
+                        <small>Contact Sales for a price estimate</small>
+                      </div>
+                    </div>
+                    <div class="plan__card-list">
+                      <p>All the greatness of Business, and:</p>
+
+                      <ul>
+                        <li>Personal onboarding concierge</li>
+                        <li>Designated customer success teams</li>
+                        <li>
+                          Centralized account management and insights for
+                          adoption and usage
+                        </li>
+                        <li>
+                          Scale WACCFinder™ across the entire organization
+                          risk-free with our flexible licensing program
+                        </li>
+                        <li>Starting from 10 members</li>
+                      </ul>
+                    </div>
+                    <div class="plan__card-btn matchb">
+                      <a
+                        class="btn btn__primary btn__block disabled"
+                        href="#modalLogin"
+                        data-toggle="modal"
+                        >Get Started</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="plan__footnote">
+              <ol>
+                <li>AAA-rated</li>
+                <li>
+                  5 Pack WACC Add-on: Protect 5 more Extended WACC records at
+                  $25/month.
+                </li>
+                <li>Includes (1) country risk and (2) small cap premiums.</li>
+                <li>
+                  A VALLARIS adviser required to estimate non-AAA-rated,
+                  multi-currency or multi-country inputs.
+                  <a href="#">Click here</a> to book an Advisory call.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+        <section class="faq-block">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-10">
+                <h3>Frequently Asked Questions</h3>
+                <div
+                  class="panel-group faq-accordion"
+                  id="faq_accordion"
+                  role="tablist"
+                  aria-multiselectable="false"
+                >
+                  <div class="panel panel-default">
+                    <div class="panel-heading" id="headingOne" role="tab">
+                      <h4 class="panel-title">
+                        <a
+                          role="button"
+                          data-toggle="collapse"
+                          data-parent="#faq_accordion"
+                          href="#collapseOne"
+                          aria-expanded="false"
+                          aria-controls="faq_accordion"
+                          class="collapsed"
+                          >What is WACC?</a
+                        >
+                      </h4>
                     </div>
                     <div
-                      style="display: none"
-                      class="value value-text-debt_percent"
+                      class="panel-collapse in collapse"
+                      id="collapseOne"
+                      role="tabpanel"
+                      aria-labelledby="headingOne"
+                      data-parent="#faq_accordion"
+                      style=""
                     >
-                      <span class="span-text-debt_percent">0%</span>
+                      <div class="panel-body">
+                        Weighted-Average Cost of Capital (OTC:WACC) is the
+                        average of debt and equity capital costs that all
+                        publicly traded companies with debt and equity
+                        stakeholders incur as a cost of operating.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" id="headingTwo" role="tab">
+                      <h4 class="panel-title">
+                        <a
+                          class="collapsed"
+                          role="button"
+                          data-toggle="collapse"
+                          data-parent="#faq_accordion"
+                          href="#collapseTwo"
+                          aria-expanded="false"
+                          aria-controls="collapseTwo"
+                          >How to calculate Cost of Equity?</a
+                        >
+                      </h4>
+                    </div>
+                    <div
+                      class="panel-collapse collapse"
+                      id="collapseTwo"
+                      role="tabpanel"
+                      aria-labelledby="headingTwo"
+                      data-parent="#faq_accordion"
+                    >
+                      <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high
+                        life accusamus terry richardson ad squid. 3 wolf moon
+                        officia aute, non cupidatat skateboard dolor brunch.
+                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                        wolf moon tempor, sunt aliqua put a bird on it squid
+                        single-origin coffee nulla assumenda shoreditch et.
+                        Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan
+                        excepteur butcher vice lomo. Leggings occaecat craft
+                        beer farm-to-table, raw denim aesthetic synth nesciunt
+                        you probably haven't heard of them accusamus labore
+                        sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" id="headingThree" role="tab">
+                      <h4 class="panel-title">
+                        <a
+                          class="collapsed"
+                          role="button"
+                          data-toggle="collapse"
+                          data-parent="#faq_accordion"
+                          href="#collapseThree"
+                          aria-expanded="false"
+                          aria-controls="collapseThree"
+                          >How to calculate Cost of Debt?</a
+                        >
+                      </h4>
+                    </div>
+                    <div
+                      class="panel-collapse collapse"
+                      id="collapseThree"
+                      role="tabpanel"
+                      aria-labelledby="headingThree"
+                      data-parent="#faq_accordion"
+                    >
+                      <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high
+                        life accusamus terry richardson ad squid. 3 wolf moon
+                        officia aute, non cupidatat skateboard dolor brunch.
+                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                        wolf moon tempor, sunt aliqua put a bird on it squid
+                        single-origin coffee nulla assumenda shoreditch et.
+                        Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan
+                        excepteur butcher vice lomo. Leggings occaecat craft
+                        beer farm-to-table, raw denim aesthetic synth nesciunt
+                        you probably haven't heard of them accusamus labore
+                        sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" id="headingFour" role="tab">
+                      <h4 class="panel-title">
+                        <a
+                          class=""
+                          role="button"
+                          data-toggle="collapse"
+                          data-parent="#faq_accordion"
+                          href="#collapseFour"
+                          aria-expanded="true"
+                          aria-controls="collapseFour"
+                          >What is the WACC formula?</a
+                        >
+                      </h4>
+                    </div>
+                    <div
+                      class="panel-collapse collapse show"
+                      id="collapseFour"
+                      role="tabpanel"
+                      aria-labelledby="headingFour"
+                      data-parent="#faq_accordion"
+                      style=""
+                    >
+                      <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high
+                        life accusamus terry richardson ad squid. 3 wolf moon
+                        officia aute, non cupidatat skateboard dolor brunch.
+                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                        wolf moon tempor, sunt aliqua put a bird on it squid
+                        single-origin coffee nulla assumenda shoreditch et.
+                        Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan
+                        excepteur butcher vice lomo. Leggings occaecat craft
+                        beer farm-to-table, raw denim aesthetic synth nesciunt
+                        you probably haven't heard of them accusamus labore
+                        sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" id="headingFive" role="tab">
+                      <h4 class="panel-title">
+                        <a
+                          class="collapsed"
+                          role="button"
+                          data-toggle="collapse"
+                          data-parent="#faq_accordion"
+                          href="#collapseFive"
+                          aria-expanded="false"
+                          aria-controls="collapseFour"
+                          >How do I find the weighted average Cost of Capital
+                          (WACC)?</a
+                        >
+                      </h4>
+                    </div>
+                    <div
+                      class="panel-collapse collapse"
+                      id="collapseFive"
+                      role="tabpanel"
+                      aria-labelledby="headingFive"
+                      data-parent="#faq_accordion"
+                      style=""
+                    >
+                      <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high
+                        life accusamus terry richardson ad squid. 3 wolf moon
+                        officia aute, non cupidatat skateboard dolor brunch.
+                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                        wolf moon tempor, sunt aliqua put a bird on it squid
+                        single-origin coffee nulla assumenda shoreditch et.
+                        Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan
+                        excepteur butcher vice lomo. Leggings occaecat craft
+                        beer farm-to-table, raw denim aesthetic synth nesciunt
+                        you probably haven't heard of them accusamus labore
+                        sustainable VHS.
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
 
     <footer class="footer footer__secondary" id="login-footer">
