@@ -362,7 +362,7 @@ header #hamburger-icon {
 }
 
 #main_header {
-  background-color: #ffffff;
+  background-color: #121820;
   position: fixed;
   top: 0;
   left: 0;
@@ -389,8 +389,12 @@ header #hamburger-icon {
   position: relative;
   z-index: 2;
 }
-#main_header .navbar-brand img {
+#main_header .navbar .navbar-brand img {
   max-width: 200px;
+}
+#main_header .navbar .navbar-nav .nav-item .nav-link span {
+  color: #fff;
+  margin-left: 10px;
 }
 
 .main {
@@ -557,6 +561,14 @@ header #hamburger-icon {
 #login form.form-signin .custom-control .custom-control-input:checked ~ .custom-control-label::after {
   background: url(../images/login/ic-checkmark.svg) no-repeat center;
   background-size: 1rem;
+}
+#login .error-input {
+  border-color: #640000 !important;
+}
+#login .error-message {
+  color: #640000;
+  font-size: 0.8rem;
+  margin-top: 5px;
 }
 
 #account .profile-info {
@@ -802,6 +814,8 @@ header #hamburger-icon {
 
 #login-footer {
   padding: 3rem;
+  background-color: #121820;
+  width: 100%;
 }
 #login-footer .footer__top {
   padding-bottom: 1rem;
@@ -810,6 +824,7 @@ header #hamburger-icon {
 }
 #login-footer .footer__top p {
   font-size: 16px;
+  color: #fff;
 }
 #login-footer .footer__logo img {
   max-width: 200px;
@@ -817,6 +832,7 @@ header #hamburger-icon {
 }
 #login-footer .footer__note p {
   font-size: 16px;
+  color: #fff;
 }
 
 @media only screen and (min-width: 992px) {
@@ -1105,6 +1121,94 @@ header #hamburger-icon {
   #faq .container {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+  #account .profile-info .profile-pic {
+    -webkit-flex: 0 0 4.5rem;
+    -ms-flex: 0 0 4.5rem;
+    flex: 0 0 4.5rem;
+    max-width: 4.5rem;
+    margin-right: 1rem;
+  }
+  #account .profile-info .profile-pic #pp {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(181, 145, 79);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    font-weight: 700;
+    color: #fff;
+  }
+  #account .profile-info .profile-detail {
+    -webkit-flex: 0 0 calc(100% - 6rem);
+    -ms-flex: 0 0 calc(100% - 6rem);
+    flex: 0 0 calc(100% - 6rem);
+    max-width: calc(100% - 6rem);
+    position: relative;
+  }
+  #account .profile-info .profile-detail .profile-name .full-name {
+    font-size: 2rem;
+    line-height: 1.333em;
+  }
+  #account .profile-info .profile-detail .profile-name .acc-stat {
+    color: #2c2c2c;
+  }
+  #account .profile-info .profile-detail .profile-contact ul {
+    padding: 0;
+    list-style: none;
+  }
+  #account .profile-info .profile-detail .profile-contact ul li {
+    padding: 0.75rem 0;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  #account .profile-info .profile-detail .profile-contact ul li .ic {
+    margin-right: 1rem;
+  }
+  #account .profile-info .profile-detail .profile-contact ul li a {
+    color: #000;
+    text-decoration: none;
+  }
+  #account .profile-info .profile-detail .button-edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  #account .profile-info .profile-detail .button-edit img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+  #login-footer {
+    padding: 3rem 1rem;
+    background-color: #121820;
+    width: 100%;
+  }
+  #login-footer .footer__top {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #bfbfbf;
+    margin-bottom: 1rem;
+  }
+  #login-footer .footer__top p {
+    font-size: 16px;
+    color: #fff;
+  }
+  #login-footer .footer__logo img {
+    max-width: 200px;
+    display: block;
+    margin-inline: auto;
+    margin-top: 1rem;
+  }
+  #login-footer .footer__note p {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
   }
 }
 

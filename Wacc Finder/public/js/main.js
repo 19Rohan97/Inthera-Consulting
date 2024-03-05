@@ -81,18 +81,51 @@ function getUserInitials(name) {
 
 $(document).ready(function () {
   if ($("#login")) {
-    // password validation
-    $("#password").keyup(function () {
-      var pass = $("#password").val();
-      var cpass = $("#cpass").val();
-
-      if (pass != "") {
-        $("#error-pass").text("");
-        error = false;
-        $("#pass").removeClass("box_error");
+    // Validate Email on keyup
+    $('input[name="email"]').on("keyup", function () {
+      var email = $(this).val().trim();
+      if (email.length === 0 || !validateEmail(email)) {
+        addError($(this), "Please enter a valid email address.");
+      } else {
+        removeError($(this));
       }
     });
+
+    // Validate Password on keyup
+    $('input[name="password"]').on("keyup", function () {
+      var password = $(this).val().trim();
+      if (password.length < 8) {
+        addError($(this), "Your password must be at least 8 characters long.");
+      } else {
+        removeError($(this));
+      }
+    });
+
+    // Function to validate email using regex
+    function validateEmail(email) {
+      var re =
+        /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    }
+
+    // Function to add error display
+    function addError(element, message) {
+      element.addClass("error-input");
+      element.next(".error-message").remove(); // Remove existing message to prevent duplicates
+      var errorMessage = $('<div class="error-message">' + message + "</div>");
+      element.after(errorMessage);
+    }
+
+    // Function to remove error display
+    function removeError(element) {
+      element.removeClass("error-input");
+      element.next(".error-message").remove();
+    }
   }
+
+  /**
+   * Custom Avatar Creation
+   */
   if ($("#account")) {
     // Get user's full name from the element with class "full-name"
     var fullName = $(".full-name").text();

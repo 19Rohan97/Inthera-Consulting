@@ -1,4 +1,7 @@
 $blue-black: #121820;
+$cadet-grey: #9da2ab;
+$wacc-red: #640000;
+
 $text-color: #2c2c2c;
 $text-color-light: #3d3d3d;
 $brown-gold: rgb(181, 145, 79);
@@ -414,7 +417,7 @@ header {
 }
 
 #main_header {
-  background-color: #ffffff;
+  background-color: $blue-black;
   position: fixed;
   top: 0;
   left: 0;
@@ -439,10 +442,20 @@ header {
     transition: padding 0.3s ease-in-out;
     position: relative;
     z-index: 2;
-  }
-  .navbar-brand {
-    img {
-      max-width: 200px;
+    .navbar-brand {
+      img {
+        max-width: 200px;
+      }
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          span {
+            color: #fff;
+            margin-left: 10px;
+          }
+        }
+      }
     }
   }
 }
@@ -621,6 +634,15 @@ header {
         background-size: 1rem;
       }
     }
+  }
+  .error-input {
+    border-color: $wacc-red !important;
+  }
+
+  .error-message {
+    color: $wacc-red;
+    font-size: 0.8rem;
+    margin-top: 5px;
   }
 }
 
@@ -880,12 +902,15 @@ header {
 
 #login-footer {
   padding: 3rem;
+  background-color: $blue-black;
+  width: 100%;
   .footer__top {
     padding-bottom: 1rem;
     border-bottom: 1px solid #bfbfbf;
     margin-bottom: 1rem;
     p {
       font-size: 16px;
+      color: #fff;
     }
   }
   .footer__logo {
@@ -897,6 +922,7 @@ header {
   .footer__note {
     p {
       font-size: 16px;
+      color: #fff;
     }
   }
 }
@@ -1261,6 +1287,107 @@ header {
     .container {
       padding-left: 2rem;
       padding-right: 2rem;
+    }
+  }
+
+  #account {
+    .profile-info {
+      .profile-pic {
+        -webkit-flex: 0 0 4.5rem;
+        -ms-flex: 0 0 4.5rem;
+        flex: 0 0 4.5rem;
+        max-width: 4.5rem;
+        margin-right: 1rem;
+        #pp {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          background-color: $brown-gold;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 34px;
+          font-weight: 700;
+          color: #fff;
+        }
+      }
+      .profile-detail {
+        -webkit-flex: 0 0 calc(100% - 6rem);
+        -ms-flex: 0 0 calc(100% - 6rem);
+        flex: 0 0 calc(100% - 6rem);
+        max-width: calc(100% - 6rem);
+        position: relative;
+        .profile-name {
+          .full-name {
+            font-size: 2rem;
+            line-height: 1.333em;
+          }
+          .acc-stat {
+            color: $text-color;
+          }
+        }
+        .profile-contact {
+          ul {
+            padding: 0;
+            list-style: none;
+            li {
+              padding: 0.75rem 0;
+              padding-left: 0;
+              margin-bottom: 0;
+              .ic {
+                margin-right: 1rem;
+              }
+              a {
+                color: #000;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+        .button-edit {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 1.5rem;
+          height: 1.5rem;
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+          }
+        }
+      }
+    }
+  }
+  #login-footer {
+    padding: 3rem 1rem;
+    background-color: $blue-black;
+    width: 100%;
+    .footer__top {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #bfbfbf;
+      margin-bottom: 1rem;
+      p {
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+    .footer__logo {
+      img {
+        max-width: 200px;
+        display: block;
+        margin-inline: auto;
+        margin-top: 1rem;
+      }
+    }
+    .footer__note {
+      p {
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+      }
     }
   }
 }
