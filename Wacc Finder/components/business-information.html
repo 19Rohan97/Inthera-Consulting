@@ -29,7 +29,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
     />
   </head>
-  <body id="business-information">
+  <body>
     <header id="main_header">
       <div class="container">
         <div class="row">
@@ -205,14 +205,15 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-8">
+          <div class="col-lg-8" id="business-information">
             <div class="profile-business-info">
               <h4>Edit Business Information</h4>
               <form
-                action="http://127.0.0.1:8000/account/business-information"
+                action="/components/business-information.html"
                 class="ajax"
                 method="POST"
                 enctype="multipart/form-data"
+                id="business-info-form"
               >
                 <input
                   type="hidden"
@@ -231,7 +232,7 @@
                 <div class="form-group">
                   <label>Organization type</label>
                   <select
-                    class="select"
+                    class="select form-select"
                     name="organization_type"
                     title="Organization type"
                   >
@@ -246,7 +247,7 @@
                 <div class="form-group">
                   <label>Business stage</label>
                   <select
-                    class="select"
+                    class="select form-select"
                     name="bussiness_type"
                     title="Business stage"
                   >
@@ -259,120 +260,50 @@
                 </div>
                 <div class="form-group">
                   <label>No. of employees in the organization</label>
-                  <div
-                    class="dropdown bootstrap-select select"
-                    style="width: 100%"
+                  <select
+                    class="select form-select"
+                    name="no_employment"
+                    title="Organization type"
+                    tabindex="-98"
                   >
-                    <select
-                      class="select"
-                      name="no_employment"
-                      title="Organization type"
-                      tabindex="-98"
-                    >
-                      <option class="bs-title-option" value=""></option>
-                      <option value="Just me">Just me</option>
-                      <option value="2-5">2-5</option>
-                      <option value="6-10">6-10</option>
-                      <option value="11-25">11-25</option>
-                      <option value="26-50">26-50</option>
-                      <option value="51-200">51-200</option>
-                      <option value="201-500">201-500</option>
-                      <option value="500+">500+</option></select
-                    ><button
-                      type="button"
-                      class="btn dropdown-toggle select-control bs-placeholder"
-                      data-toggle="dropdown"
-                      role="combobox"
-                      aria-owns="bs-select-3"
-                      aria-haspopup="listbox"
-                      aria-expanded="false"
-                      title="Organization type"
-                    >
-                      <div class="filter-option">
-                        <div class="filter-option-inner">
-                          <div class="filter-option-inner-inner">
-                            Organization type
-                          </div>
-                        </div>
-                      </div>
-                    </button>
-                    <div class="dropdown-menu">
-                      <div
-                        class="inner show"
-                        role="listbox"
-                        id="bs-select-3"
-                        tabindex="-1"
-                      >
-                        <ul
-                          class="dropdown-menu inner show"
-                          role="presentation"
-                        ></ul>
-                      </div>
-                    </div>
-                  </div>
+                    <option class="bs-title-option" value=""></option>
+                    <option value="Just me">Just me</option>
+                    <option value="2-5">2-5</option>
+                    <option value="6-10">6-10</option>
+                    <option value="11-25">11-25</option>
+                    <option value="26-50">26-50</option>
+                    <option value="51-200">51-200</option>
+                    <option value="201-500">201-500</option>
+                    <option value="500+">500+</option>
+                  </select>
                 </div>
                 <div class="form-group">
                   <label>Business industry</label>
-                  <div
-                    class="dropdown bootstrap-select select"
-                    style="width: 100%"
+                  <select
+                    class="select form-select"
+                    name="bussiness_industry"
+                    title="Organization type"
+                    tabindex="-98"
                   >
-                    <select
-                      class="select"
-                      name="bussiness_industry"
-                      title="Organization type"
-                      tabindex="-98"
-                    >
-                      <option class="bs-title-option" value=""></option>
-                      <option value="Communication Services">
-                        Communication Services
-                      </option>
-                      <option value="Consumer Discretionary">
-                        Consumer Discretionary
-                      </option>
-                      <option value="Consumer Staple">Consumer Staple</option>
-                      <option value="Energy">Energy</option>
-                      <option value="Financials">Financials</option>
-                      <option value="Healthcare">Healthcare</option>
-                      <option value="Industrials">Industrials</option>
-                      <option value="Information Technology">
-                        Information Technology
-                      </option>
-                      <option value="Materials">Materials</option>
-                      <option value="Real Estate">Real Estate</option>
-                      <option value="Utilities">Utilities</option></select
-                    ><button
-                      type="button"
-                      class="btn dropdown-toggle select-control bs-placeholder"
-                      data-toggle="dropdown"
-                      role="combobox"
-                      aria-owns="bs-select-4"
-                      aria-haspopup="listbox"
-                      aria-expanded="false"
-                      title="Organization type"
-                    >
-                      <div class="filter-option">
-                        <div class="filter-option-inner">
-                          <div class="filter-option-inner-inner">
-                            Organization type
-                          </div>
-                        </div>
-                      </div>
-                    </button>
-                    <div class="dropdown-menu">
-                      <div
-                        class="inner show"
-                        role="listbox"
-                        id="bs-select-4"
-                        tabindex="-1"
-                      >
-                        <ul
-                          class="dropdown-menu inner show"
-                          role="presentation"
-                        ></ul>
-                      </div>
-                    </div>
-                  </div>
+                    <option class="bs-title-option" value=""></option>
+                    <option value="Communication Services">
+                      Communication Services
+                    </option>
+                    <option value="Consumer Discretionary">
+                      Consumer Discretionary
+                    </option>
+                    <option value="Consumer Staple">Consumer Staple</option>
+                    <option value="Energy">Energy</option>
+                    <option value="Financials">Financials</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Industrials">Industrials</option>
+                    <option value="Information Technology">
+                      Information Technology
+                    </option>
+                    <option value="Materials">Materials</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Utilities">Utilities</option>
+                  </select>
                 </div>
                 <div class="form-group inpt-pass">
                   <label>Business website (Optional)</label>
@@ -383,13 +314,15 @@
                     value=""
                   />
                 </div>
-                <div class="form-action text-right">
+                <div
+                  class="form-action d-flex justify-content-end column-gap-2"
+                >
                   <a
-                    class="btn btn-link"
+                    class="btn transparent-btn"
                     href="http://127.0.0.1:8000/account/business-information"
                     >Cancel</a
                   >
-                  <button class="btn btn__primary" type="submit">
+                  <button class="btn btn-brown-gold" type="submit">
                     Save changes
                   </button>
                 </div>

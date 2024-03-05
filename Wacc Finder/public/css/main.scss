@@ -248,6 +248,29 @@ p {
   }
 }
 
+form {
+  .form-control:focus,
+  .form-select:focus,
+  .form-check-input:focus {
+    border-color: $brown-gold;
+    box-shadow: 0 0 0 0.25rem $form-outline;
+  }
+  .form-check-input:checked {
+    background-color: $brown-gold;
+    border-color: $brown-gold;
+  }
+}
+
+.btn-deactivate {
+  background-color: $wacc-red;
+  color: #fff;
+  border: 1px solid $wacc-red;
+  &:hover {
+    border: 1px solid $wacc-red;
+    color: $wacc-red;
+  }
+}
+
 header {
   .logo {
     width: 100%;
@@ -946,7 +969,6 @@ header {
         border-radius: 0.5rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       }
-      
     }
   }
 }

@@ -219,6 +219,27 @@ p {
   background-image: url(../images/Account-Images/ic-email.svg);
 }
 
+form .form-control:focus,
+form .form-select:focus,
+form .form-check-input:focus {
+  border-color: rgb(181, 145, 79);
+  box-shadow: 0 0 0 0.25rem rgba(181, 145, 79, 0.25);
+}
+form .form-check-input:checked {
+  background-color: rgb(181, 145, 79);
+  border-color: rgb(181, 145, 79);
+}
+
+.btn-deactivate {
+  background-color: #640000;
+  color: #fff;
+  border: 1px solid #640000;
+}
+.btn-deactivate:hover {
+  border: 1px solid #640000;
+  color: #640000;
+}
+
 header .logo {
   width: 100%;
   max-width: 200px;

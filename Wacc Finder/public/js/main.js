@@ -121,10 +121,7 @@ $(document).ready(function () {
 
       // Validate Email
       if (email.length === 0) {
-        addError(
-          $('input[name="email"]'),
-          "Please enter an email address."
-        );
+        addError($('input[name="email"]'), "Please enter an email address.");
         isValid = false;
       } else if (!validateEmail(email)) {
         addError(
@@ -212,6 +209,51 @@ $(document).ready(function () {
       var errorMessage = $('<div class="error-message">' + message + "</div>");
       element.after(errorMessage);
     }
+  }
+
+  /**
+   * Business Info Page Script
+   */
+  if ($("#business-information").length > 0) {
+    $("#yourFormId").validate({
+      rules: {
+        bussiness_name: {
+          required: true,
+        },
+        organization_type: {
+          required: true,
+        },
+        bussiness_type: {
+          required: true,
+        },
+        no_employment: {
+          required: true,
+        },
+        bussiness_industry: {
+          required: true,
+        },
+      },
+      messages: {
+        bussiness_name: {
+          required: "Please enter your business name",
+        },
+        organization_type: {
+          required: "Please select an organization type",
+        },
+        bussiness_type: {
+          required: "Please select a business stage",
+        },
+        no_employment: {
+          required: "Please select the number of employees",
+        },
+        bussiness_industry: {
+          required: "Please select a business industry",
+        },
+      },
+      submitHandler: function (form) {
+        form.submit();
+      },
+    });
   }
 
   /**
