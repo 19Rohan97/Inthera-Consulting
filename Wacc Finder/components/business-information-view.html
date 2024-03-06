@@ -206,125 +206,29 @@
             </div>
           </div>
           <div class="col-lg-8" id="business-information">
-            <div class="profile-business-info">
-              <h4>Edit Business Information</h4>
-              <form
-                action="/components/business-information-view.html"
-                method="POST"
-                id="business-info-form"
-              >
-                <input
-                  type="hidden"
-                  name="_token"
-                  value="f5D1JgIQh0v4M15r8en05HlRBJYREFecLYWsKMDo"
-                />
-                <div class="form-group inpt-pass">
-                  <label>Business name</label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    name="bussiness_name"
-                    value=""
-                  />
+            <div class="profile-info">
+              <div class="profile-detail">
+                <div class="profile-name">
+                  <h2>Test</h2>
+                  <div class="company-scale">
+                    <span>Large Business</span><span>Established</span>
+                  </div>
+                  <div class="acc-stat">Financials</div>
                 </div>
-                <div class="form-group">
-                  <label>Organization type</label>
-                  <select
-                    class="select form-select"
-                    name="organization_type"
-                    title="Organization type"
-                  >
-                    <option class="bs-title-option" value=""></option>
-                    <option value="Small Business">Small Business</option>
-                    <option value="Large Business">Large Business</option>
-                    <option value="Agency">Agency</option>
-                    <option value="Non-profit">Non-profit</option>
-                    <option value="Educational">Educational</option>
-                  </select>
+                <div class="profile-contact">
+                  <ul>
+                    <li>
+                      <div class="ic ic-user"></div>
+                      <span>11-25 employees</span>
+                    </li>
+                  </ul>
                 </div>
-                <div class="form-group">
-                  <label>Business stage</label>
-                  <select
-                    class="select form-select"
-                    name="bussiness_type"
-                    title="Business stage"
-                  >
-                    <option class="bs-title-option" value=""></option>
-                    <option value="Idea">Idea</option>
-                    <option value="Expansion">Expansion</option>
-                    <option value="Established">Established</option>
-                    <option value="Well Established">Well Established</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label>No. of employees in the organization</label>
-                  <select
-                    class="select form-select"
-                    name="no_employment"
-                    title="Organization type"
-                    tabindex="-98"
-                  >
-                    <option class="bs-title-option" value=""></option>
-                    <option value="Just me">Just me</option>
-                    <option value="2-5">2-5</option>
-                    <option value="6-10">6-10</option>
-                    <option value="11-25">11-25</option>
-                    <option value="26-50">26-50</option>
-                    <option value="51-200">51-200</option>
-                    <option value="201-500">201-500</option>
-                    <option value="500+">500+</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label>Business industry</label>
-                  <select
-                    class="select form-select"
-                    name="bussiness_industry"
-                    title="Organization type"
-                    tabindex="-98"
-                  >
-                    <option class="bs-title-option" value=""></option>
-                    <option value="Communication Services">
-                      Communication Services
-                    </option>
-                    <option value="Consumer Discretionary">
-                      Consumer Discretionary
-                    </option>
-                    <option value="Consumer Staple">Consumer Staple</option>
-                    <option value="Energy">Energy</option>
-                    <option value="Financials">Financials</option>
-                    <option value="Healthcare">Healthcare</option>
-                    <option value="Industrials">Industrials</option>
-                    <option value="Information Technology">
-                      Information Technology
-                    </option>
-                    <option value="Materials">Materials</option>
-                    <option value="Real Estate">Real Estate</option>
-                    <option value="Utilities">Utilities</option>
-                  </select>
-                </div>
-                <div class="form-group inpt-pass">
-                  <label>Business website (Optional)</label>
-                  <input
-                    class="form-control"
-                    type="text"
-                    name="bussiness_website"
-                    value=""
-                  />
-                </div>
-                <div
-                  class="form-action d-flex justify-content-end column-gap-2"
-                >
-                  <a
-                    class="btn transparent-btn"
-                    href="business-information-view.html"
-                    >Cancel</a
-                  >
-                  <button class="btn btn-brown-gold" type="submit">
-                    Save changes
-                  </button>
-                </div>
-              </form>
+                <a class="button-edit" href="business-information.html"
+                  ><img
+                    src="../public/images/Account-Images/ic-edit.svg"
+                    alt="icon"
+                /></a>
+              </div>
             </div>
           </div>
         </div>
@@ -370,7 +274,6 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/mklb.js"></script>
     <script src="../public/js/main.js"></script>

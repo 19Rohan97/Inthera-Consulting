@@ -229,6 +229,13 @@ form .form-check-input:checked {
   background-color: rgb(181, 145, 79);
   border-color: rgb(181, 145, 79);
 }
+form input.error,
+form select.error {
+  border-color: #640000 !important;
+}
+form .error {
+  color: #640000;
+}
 
 .btn-deactivate {
   background-color: #640000;
@@ -913,6 +920,82 @@ header #hamburger-icon {
   border: 1px solid #e2e2e2;
   border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#business-information .profile-info {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+#business-information .profile-info .profile-detail {
+  -webkit-flex: 0 0 calc(100% - 7.5rem);
+  -ms-flex: 0 0 calc(100% - 7.5rem);
+  flex: 0 0 calc(100% - 7.5rem);
+  max-width: calc(100% - 7.5rem);
+  position: relative;
+}
+#business-information .profile-info .profile-detail .profile-name {
+  margin-bottom: 3.25rem;
+}
+#business-information .profile-info .profile-detail .profile-name h2 {
+  font-family: "Graphik Medium", sans-serif;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+#business-information .profile-info .profile-detail .profile-name .company-scale {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#business-information .profile-info .profile-detail .profile-name .company-scale span {
+  position: relative;
+}
+#business-information .profile-info .profile-detail .profile-name .company-scale span + span {
+  padding-left: 2.25rem;
+}
+#business-information .profile-info .profile-detail .profile-name .company-scale span + span:before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  background: #000;
+  border-radius: 50px;
+}
+#business-information .profile-info .profile-detail .profile-name .acc-stat {
+  color: #8a8a8a;
+}
+#business-information .profile-info .profile-detail .profile-contact ul {
+  list-style: none;
+  padding: 0;
+}
+#business-information .profile-info .profile-detail .profile-contact ul li {
+  padding: 0.75rem 0;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+#business-information .profile-info .profile-detail .profile-contact ul li .ic {
+  margin-right: 1rem;
+}
+#business-information .profile-info .profile-detail .button-edit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+#business-information .profile-info .profile-detail .button-edit img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 /**

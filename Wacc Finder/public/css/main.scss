@@ -259,6 +259,16 @@ form {
     background-color: $brown-gold;
     border-color: $brown-gold;
   }
+
+  input,
+  select {
+    &.error {
+      border-color: $wacc-red !important;
+    }
+  }
+  .error {
+    color: $wacc-red;
+  }
 }
 
 .btn-deactivate {
@@ -1013,6 +1023,85 @@ header {
       }
     }
   }
+
+  .profile-info {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    .profile-detail {
+      -webkit-flex: 0 0 calc(100% - 7.5rem);
+      -ms-flex: 0 0 calc(100% - 7.5rem);
+      flex: 0 0 calc(100% - 7.5rem);
+      max-width: calc(100% - 7.5rem);
+      position: relative;
+      .profile-name {
+        margin-bottom: 3.25rem;
+        h2 {
+          font-family: "Graphik Medium", sans-serif;
+          font-weight: 500;
+          margin-bottom: 0;
+        }
+        .company-scale {
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          span {
+            position: relative;
+          }
+          span + span {
+            padding-left: 2.25rem;
+            &:before {
+              content: "";
+              width: 4px;
+              height: 4px;
+              position: absolute;
+              top: 10px;
+              left: 16px;
+              background: #000;
+              border-radius: 50px;
+            }
+          }
+        }
+        .acc-stat {
+          color: #8a8a8a;
+        }
+      }
+      .profile-contact {
+        ul {
+          list-style: none;
+          padding: 0;
+          li {
+            padding: 0.75rem 0;
+            padding-left: 0;
+            margin-bottom: 0;
+            .ic {
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+      .button-edit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -1027,7 +1116,6 @@ header {
         top: 0;
         left: 12px;
       }
-      
     }
     .section__heading {
       h1 {

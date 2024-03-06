@@ -215,7 +215,7 @@ $(document).ready(function () {
    * Business Info Page Script
    */
   if ($("#business-information").length > 0) {
-    $("#yourFormId").validate({
+    $("#business-info-form").validate({
       rules: {
         bussiness_name: {
           required: true,
