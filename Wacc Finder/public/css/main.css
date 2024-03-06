@@ -240,6 +240,47 @@ form .form-check-input:checked {
   color: #640000;
 }
 
+.switch {
+  position: relative;
+  height: 1.5rem;
+  width: 3rem;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 9999px;
+  background-color: rgba(100, 116, 139, 0.377);
+  transition: all 0.3s ease;
+}
+.switch:checked {
+  background-color: rgb(236, 72, 153);
+}
+.switch:checked:before {
+  transform: translateX(100%) translateY(-50%);
+  border-color: rgb(236, 72, 153);
+}
+.switch::before {
+  position: absolute;
+  content: "";
+  left: 0rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  height: 1.6rem;
+  width: 1.6rem;
+  cursor: pointer;
+  border: 1px solid rgba(100, 116, 139, 0.527);
+  border-radius: 9999px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 3px 10px rgba(100, 116, 139, 0.327);
+  transition: all 0.3s ease;
+}
+
+.link {
+  color: rgb(181, 145, 79);
+  text-decoration: none;
+  font-weight: 500;
+}
+
 header .logo {
   width: 100%;
   max-width: 200px;
@@ -875,13 +916,41 @@ header #hamburger-icon {
 }
 
 /**
-* Get Started Page CSS
+* Select Plan Page CSS
 */
-#get-started .plan__packets {
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+#select-plan .plan__header .container {
+  position: relative;
 }
-#get-started .plan__packets .plan__card {
+#select-plan .plan__header .container .btn__back {
+  position: absolute;
+  top: 0;
+  left: 12px;
+}
+#select-plan .plan__header .section__heading h1 {
+  font-size: 1.75rem;
+  line-height: 1.7em;
+  -webkit-text-fill-color: inherit;
+}
+#select-plan .plan__header .section__subtitle:not(:last-child) {
+  margin-bottom: 2rem;
+}
+#select-plan .plan__header .switch-prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.6rem;
+}
+#select-plan .plan__header .switch-prices label {
+  display: block;
+}
+#select-plan .plan__packets {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+#select-plan .plan__packets .plan__footnote {
+  padding: 2rem 0 4.5rem;
+}
+#select-plan .plan__packets .plan__card {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -891,9 +960,11 @@ header #hamburger-icon {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+  min-height: 100%;
 }
-#get-started .plan__packets .plan__card .plan__card-title {
-  padding: 1rem;
+#select-plan .plan__packets .plan__card .plan__card-title {
+  padding: 1.2rem;
   background: #121820;
   color: #fff;
   border-radius: 6px 6px 0 0;
@@ -908,18 +979,22 @@ header #hamburger-icon {
   -ms-flex-pack: center;
   justify-content: center;
 }
-#get-started .plan__packets .plan__card .plan__card-title span {
+#select-plan .plan__packets .plan__card .plan__card-title sup {
+  font-size: 12px;
+}
+#select-plan .plan__packets .plan__card .plan__card-title span {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
-#get-started .plan__packets .plan__card .plan__card-title p {
+#select-plan .plan__packets .plan__card .plan__card-title p {
   color: #fff;
+  margin: 0;
 }
-#get-started .plan__packets .plan__card .plan__card-body {
-  padding: 1.5rem;
+#select-plan .plan__packets .plan__card .plan__card-body {
+  padding: 1.5rem 1rem;
   border-radius: 0 0 6px 6px;
-  background: #212126;
+  background: #fff;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -933,38 +1008,38 @@ header #hamburger-icon {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-#get-started .plan__packets .plan__card .plan__card-body .plan__card-heading {
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading {
   text-align: center;
   margin-bottom: 1.25rem;
 }
-#get-started .plan__packets .plan__card .plan__card-body .plan__card-heading h2 {
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading h2 {
   font-size: 1.3125rem;
   line-height: 1.5em;
-  font-family: "Libre Baskerville Bold", sans-serif;
   font-weight: 700;
   margin-bottom: 0;
   color: #b74f6f;
 }
-#get-started .plan__packets .plan__card .plan__card-body .plan__card-heading .price {
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading .price {
   font-size: 1.3125rem;
   line-height: 1.5em;
-  color: #fff;
-  font-family: "Libre Baskerville Bold", sans-serif;
+  color: #2c2c2c;
   font-weight: 700;
 }
-#get-started .plan__packets .plan__card .plan__card-body .plan__card-list > ul {
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-list > ul {
   margin-bottom: 1.25rem;
   list-style: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-#get-started .plan__packets .plan__card .plan__card-body .plan__card-list > ul > li {
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-list > ul > li {
   font-size: 1rem;
   line-height: 1.6rem;
-  color: #8a8a8a;
-  padding-left: 2.5rem;
+  color: #2c2c2c;
+  padding-left: 2rem;
   position: relative;
   margin-bottom: 0.5rem;
 }
-#get-started .plan__packets .plan__card .plan__card-body .plan__card-list > ul > li:before {
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-list > ul > li:before {
   content: "";
   width: 1.5rem;
   height: 1.5rem;
@@ -973,13 +1048,50 @@ header #hamburger-icon {
   top: 0;
   left: 0;
 }
-#get-started .plan__packets .plan__card .plan__card-body .plan__card-list > ul li {
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-list > ul li {
   font-size: 1rem;
   line-height: 1.6rem;
-  color: #8a8a8a;
+  color: #2c2c2c;
 }
-#get-started .plan__packets .row .col-md-4:nth-child(1) .plan__card-heading h2 {
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-btn {
+  padding-top: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+#select-plan .plan__packets .row .col-md-4:nth-child(1) .plan__card-heading h2 {
   color: #8d4d7e;
+}
+#select-plan .plan__packets .container {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+#select-plan .faq-block {
+  padding: 7.5rem 0;
+}
+#select-plan .faq-block h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#select-plan .faq-block .accordion-item {
+  border: 0;
+}
+#select-plan .faq-block .accordion-item .accordion-button {
+  border-bottom: 1px solid #e2e2e2;
+  font-weight: 600;
+  color: #2c2c2c;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#select-plan .faq-block .accordion-item .accordion-button:not(.collapsed) {
+  color: var(--bs-accordion-active-color);
+  background-color: #fff;
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+#select-plan .faq-block .accordion-item .accordion-button:focus {
+  z-index: 3;
+  border-color: transparent;
+  outline: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #e2e2e2;
 }
 
 /**
@@ -1455,6 +1567,9 @@ header #hamburger-icon {
     font-size: 16px;
     color: #fff;
     text-align: center;
+  }
+  #select-plan .col-md-4 {
+    margin-bottom: 1.5rem;
   }
 }
 

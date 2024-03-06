@@ -271,6 +271,48 @@ form {
   }
 }
 
+.switch {
+  position: relative;
+  height: 1.5rem;
+  width: 3rem;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 9999px;
+  background-color: rgba(100, 116, 139, 0.377);
+  transition: all 0.3s ease;
+  &:checked {
+    background-color: rgba(236, 72, 153, 1);
+
+    &:before {
+      transform: translateX(100%) translateY(-50%);
+      border-color: rgba(236, 72, 153, 1);
+    }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    left: calc(1.6rem - 1.6rem);
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    height: 1.6rem;
+    width: 1.6rem;
+    cursor: pointer;
+    border: 1px solid rgba(100, 116, 139, 0.527);
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(100, 116, 139, 0.327);
+    transition: all 0.3s ease;
+  }
+}
+
+.link {
+  color: $brown-gold;
+  text-decoration: none;
+  font-weight: 500;
+}
+
 header {
   .logo {
     width: 100%;
@@ -974,12 +1016,48 @@ header {
 }
 
 /**
-* Get Started Page CSS
+* Select Plan Page CSS
 */
-#get-started {
+#select-plan {
+  .plan__header {
+    .container {
+      position: relative;
+      .btn__back {
+        position: absolute;
+        top: 0;
+        left: 12px;
+      }
+      
+    }
+    .section__heading {
+      h1 {
+        font-size: 1.75rem;
+        line-height: 1.7em;
+        -webkit-text-fill-color: inherit;
+      }
+    }
+    .section__subtitle {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+    .switch-prices {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 0.6rem;
+      label {
+        display: block;
+      }
+    }
+  }
   .plan__packets {
     padding-top: 2rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
+
+    .plan__footnote {
+      padding: 2rem 0 4.5rem;
+    }
     .plan__card {
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -990,8 +1068,12 @@ header {
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
+
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+
+      min-height: 100%;
       .plan__card-title {
-        padding: 1rem;
+        padding: 1.2rem;
         background: $blue-black;
         color: #fff;
         border-radius: 6px 6px 0 0;
@@ -1005,6 +1087,9 @@ header {
         -webkit-justify-content: center;
         -ms-flex-pack: center;
         justify-content: center;
+        sup {
+          font-size: 12px;
+        }
         span {
           -webkit-flex: 1;
           -ms-flex: 1;
@@ -1012,12 +1097,13 @@ header {
         }
         p {
           color: #fff;
+          margin: 0;
         }
       }
       .plan__card-body {
-        padding: 1.5rem;
+        padding: 1.5rem 1rem;
         border-radius: 0 0 6px 6px;
-        background: #212126;
+        background: #fff;
         -webkit-flex: 1 1 auto;
         -ms-flex: 1 1 auto;
         flex: 1 1 auto;
@@ -1036,7 +1122,6 @@ header {
           h2 {
             font-size: 1.3125rem;
             line-height: 1.5em;
-            font-family: "Libre Baskerville Bold", sans-serif;
             font-weight: 700;
             margin-bottom: 0;
             color: #b74f6f;
@@ -1044,8 +1129,7 @@ header {
           .price {
             font-size: 1.3125rem;
             line-height: 1.5em;
-            color: #fff;
-            font-family: "Libre Baskerville Bold", sans-serif;
+            color: $text-color;
             font-weight: 700;
           }
         }
@@ -1053,12 +1137,14 @@ header {
           > ul {
             margin-bottom: 1.25rem;
             list-style: none;
+            padding-left: 10px;
+            padding-right: 10px;
             > li {
               font-size: 1rem;
               line-height: 1.6rem;
-              color: #8a8a8a;
+              color: $text-color;
 
-              padding-left: 2.5rem;
+              padding-left: 2rem;
               position: relative;
               margin-bottom: 0.5rem;
 
@@ -1075,9 +1161,14 @@ header {
             li {
               font-size: 1rem;
               line-height: 1.6rem;
-              color: #8a8a8a;
+              color: $text-color;
             }
           }
+        }
+        .plan__card-btn {
+          padding-top: 1.5rem;
+          text-align: center;
+          margin-top: auto;
         }
       }
     }
@@ -1089,6 +1180,40 @@ header {
               color: #8d4d7e;
             }
           }
+        }
+      }
+    }
+    .container {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .faq-block {
+    padding: 7.5rem 0;
+    h3 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .accordion-item {
+      border: 0;
+      .accordion-button {
+        border-bottom: 1px solid $input-border;
+        font-weight: 600;
+        color: $text-color;
+        padding-top: 0;
+        padding-bottom: 0;
+        &:not(.collapsed) {
+          color: var(--bs-accordion-active-color);
+          background-color: #fff;
+          box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+            var(--bs-accordion-border-color);
+        }
+        &:focus {
+          z-index: 3;
+          border-color: transparent;
+          outline: 0;
+          box-shadow: none;
+          border-bottom: 1px solid $input-border;
         }
       }
     }
@@ -1661,6 +1786,11 @@ header {
         color: #fff;
         text-align: center;
       }
+    }
+  }
+  #select-plan {
+    .col-md-4 {
+      margin-bottom: 1.5rem;
     }
   }
 }
