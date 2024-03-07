@@ -748,14 +748,14 @@ header {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     .profile-pic {
-      -webkit-flex: 0 0 5rem;
-      -ms-flex: 0 0 5rem;
-      flex: 0 0 5rem;
-      max-width: 5rem;
-      margin-right: 2.5rem;
+      -webkit-flex: 0 0 6rem;
+      -ms-flex: 0 0 6rem;
+      flex: 0 0 6rem;
+      max-width: 6rem;
+      margin-right: 1.5rem;
       #pp {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
         border-radius: 50%;
         background-color: $brown-gold;
         display: flex;
@@ -766,69 +766,190 @@ header {
         color: #fff;
       }
     }
-  }
-  .profile-detail {
-    -webkit-flex: 0 0 calc(100% - 7.5rem);
-    -ms-flex: 0 0 calc(100% - 7.5rem);
-    flex: 0 0 calc(100% - 7.5rem);
-    max-width: calc(100% - 7.5rem);
-    position: relative;
-    .profile-name {
-      margin-bottom: 3.25rem;
-      .full-name {
-        font-weight: 500;
-        margin-bottom: 0;
-        font-size: 2.25rem;
-        line-height: 1.333em;
-      }
-      .acc-stat {
-        color: $text-color;
-      }
-    }
-    .profile-contact {
-      ul {
-        padding: 0;
-        list-style: none;
-        li {
-          padding: 0.75rem 0;
-          padding-left: 0;
+    .profile-detail {
+      -webkit-flex: 0 0 calc(100% - 7.5rem);
+      -ms-flex: 0 0 calc(100% - 7.5rem);
+      flex: 0 0 calc(100% - 7.5rem);
+      max-width: calc(100% - 7.5rem);
+      position: relative;
+      .profile-name {
+        margin-bottom: 3.25rem;
+        .full-name {
+          font-weight: 500;
           margin-bottom: 0;
-          .ic {
-            margin-right: 1rem;
-          }
-          a {
-            color: #000;
-            text-decoration: none;
+          font-size: 2.25rem;
+          line-height: 1.333em;
+        }
+        .acc-stat {
+          color: $text-color;
+        }
+      }
+      .profile-contact {
+        ul {
+          padding: 0;
+          list-style: none;
+          li {
+            padding: 0.75rem 0;
+            padding-left: 0;
+            margin-bottom: 0;
+            .ic {
+              margin-right: 1rem;
+            }
+            a {
+              color: #000;
+              text-decoration: none;
+            }
           }
         }
       }
+      .button-edit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
+        }
+      }
     }
-    .button-edit {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 1.5rem;
-      height: 1.5rem;
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
+    .profile-deact {
+      padding: 2rem 0 0;
+      ul {
+        li {
+          font-size: 1.125rem;
+          line-height: 1.4em;
+          margin-bottom: 0.5rem;
+        }
+      }
+      .btn {
+        margin-top: 1rem;
       }
     }
   }
-  .profile-deact {
-    padding: 2rem 0 0;
-    ul {
-      li {
-        font-size: 1.125rem;
-        line-height: 1.4em;
-        margin-bottom: 0.5rem;
-      }
+  &.account-edit {
+    .btn-upload {
+      display: flex;
+      justify-content: center;
     }
-    .btn {
-      margin-top: 1rem;
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+      &.hidden {
+        visibility: hidden;
+        opacity: 0;
+        max-height: 0;
+        margin: 0;
+        padding: 0;
+      }
+      label {
+        display: block;
+        font-weight: 400;
+        margin: 0 0 4px;
+      }
+      .form-control {
+        display: block;
+        width: 100%;
+        height: 2.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 400;
+        color: #000;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid $input-border;
+        border-radius: 0.5rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+      &.inpt-phoneno {
+        .select {
+          position: absolute;
+          left: 0;
+          top: 3.375rem;
+        }
+        .form-control {
+          padding-left: 104px;
+        }
+        .bootstrap-select > select {
+          position: absolute !important;
+          bottom: 0;
+          left: 50%;
+          display: block !important;
+          width: 0.5px !important;
+          height: 100% !important;
+          padding: 0 !important;
+          opacity: 0 !important;
+          border: none;
+          z-index: 0 !important;
+        }
+        .select-control {
+          position: relative;
+          border: 0;
+          width: 90px;
+          box-shadow: none;
+          left: 12px;
+          bottom: 25px;
+          background: #fff;
+          padding-left: 0;
+          padding-right: 0;
+          &.dropdown-toggle {
+            .filter-option {
+              position: static;
+              top: 0;
+              left: 0;
+              float: left;
+              height: 100%;
+              width: 100%;
+              text-align: left;
+              overflow: hidden;
+              -webkit-flex: 0 1 auto;
+              -ms-flex: 0 1 auto;
+              flex: 0 1 auto;
+              .filter-option-inner-inner {
+                overflow: hidden;
+              }
+            }
+            &:after {
+              content: "";
+              width: 1.5rem;
+              height: 1.5rem;
+              position: absolute;
+              top: 0.5rem;
+              right: 0.5rem;
+              background: url(../images/Account-Images/ic-chevrons-down.svg);
+              border: 0;
+            }
+          }
+        }
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 1000;
+          float: left;
+          min-width: 10rem;
+          padding: 0;
+          margin: 0.125rem 0 0;
+          font-size: 1rem;
+          color: #000;
+          text-align: left;
+          list-style: none;
+          background-color: #fff;
+          background-clip: padding-box;
+          border: 1px solid $input-border;
+          border-radius: 0.25rem;
+          box-shadow: 0px 12px 20px rgba(20, 20, 22, 0.2);
+          .inner {
+            max-height: 165px;
+            overflow-y: auto;
+          }
+        }
+      }
     }
   }
 }
