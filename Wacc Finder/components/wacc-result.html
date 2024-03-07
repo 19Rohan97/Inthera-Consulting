@@ -241,41 +241,31 @@
                       <a
                         class="button__dots"
                         href="#"
-                        data-toggle="dropdown"
+                        data-bs-toggle="dropdown"
                         aria-expanded="true"
                         ><img
-                          src="http://127.0.0.1:8000/wacc/images/ic-dots.svg"
+                          src="../public/images/wacc/ic-dots.svg"
                           alt="icon"
                       /></a>
-                      <div
-                        class="dropdown-menu dropdown-menu-right show"
-                        x-placement="bottom-end"
-                        style="
-                          position: absolute;
-                          transform: translate3d(234px, 24px, 0px);
-                          top: 0px;
-                          left: 0px;
-                          will-change: transform;
-                        "
-                      >
+                      <div class="dropdown-menu dropdown-menu-right">
                         <a
                           class="dropdown-item"
                           href="#"
-                          data-toggle="modal"
-                          data-target="#modalViewWACC94"
+                          data-bs-toggle="modal"
+                          data-bs-target="#wacc-result-view"
                           >View</a
                         ><a
                           class="dropdown-item"
                           href="#"
-                          data-toggle="modal"
-                          data-target="#modalRename94"
+                          data-bs-toggle="modal"
+                          data-bs-target="#wacc-rename-view"
                           >Rename</a
                         >
                         <a
                           class="dropdown-item"
                           href="#"
-                          data-toggle="modal"
-                          data-target="#modalDelWACC94"
+                          data-bs-toggle="modal"
+                          data-bs-target="#wacc-delete-view"
                           >Delete</a
                         >
                       </div>
@@ -306,134 +296,103 @@
                 </div>
               </div>
               <div
-                class="modal modalViewWACC"
-                id="modalViewWACC94"
+                class="modal wacc-result-view"
+                id="wacc-result-view"
                 tabindex="-1"
               >
-                <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
                   <div class="modal-content">
                     <div class="modal-body">
-                      <div class="calculator calc-plug">
-                        <div class="calculator__formula">
-                          <div class="container">
-                            <div class="rumus">
-                              <div class="rumus__item has-child multiplication">
-                                <div class="circle">
-                                  <div class="text">
-                                    <span>Cost of Debt</span><br /><small
-                                      >After Tax</small
+                      <section id="get-started">
+                        <div class="container">
+                          <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                              <div class="rumus mt-5">
+                                <div class="rumus__item multiplication">
+                                  <div class="circle">
+                                    <div class="text">
+                                      <span>Cost of Equity</span>
+                                    </div>
+                                    <div
+                                      style="display: none"
+                                      class="value value-text-debt"
                                     >
-                                  </div>
-                                  <div class="value"><span>3.5%</span></div>
-                                </div>
-                                <div class="childs">
-                                  <div class="circle-small multiplication">
-                                    <div class="text">
-                                      <small>Pre-Tax Cost <br />of Debt</small>
+                                      <span class="span-text-debt">0%</span>
                                     </div>
-                                    <div class="value"><span>5%</span></div>
                                   </div>
-                                  <div class="circle-small">
+                                  <div class="circle">
                                     <div class="text">
-                                      <small>(1-Tax Rate)</small>
+                                      <span>% Equity</span>
                                     </div>
-                                    <div class="value"><span>27%</span></div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                class="rumus__item has-child addition grouped-start"
-                              >
-                                <div class="circle">
-                                  <div class="text"><span>% debt</span></div>
-                                  <div class="value"><span>5%</span></div>
-                                </div>
-                                <div class="childs">
-                                  <div class="circle-small">
-                                    <div class="text">
-                                      <span>Debt/ <br />Debt+Equity</span>
+                                    <div
+                                      style="display: none"
+                                      class="value value-text-debt"
+                                    >
+                                      <span class="span-text-debt">0%</span>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div class="rumus__item has-child multiplication">
-                                <div class="circle">
-                                  <div class="text">
-                                    <span>Cost of Equity</span>
+                                <div class="addition">+</div>
+                                <div class="rumus__item multiplication">
+                                  <div class="circle">
+                                    <div class="text text-debt_percent">
+                                      <span>Cost of Debt</span>
+                                    </div>
+                                    <div
+                                      style="display: none"
+                                      class="value value-text-debt_percent"
+                                    >
+                                      <span class="span-text-debt_percent"
+                                        >0%</span
+                                      >
+                                    </div>
                                   </div>
-                                  <div class="value"><span>6.5%</span></div>
+                                  <div class="circle">
+                                    <div class="text text-debt_percent">
+                                      <span>% debt</span>
+                                    </div>
+                                    <div
+                                      style="display: none"
+                                      class="value value-text-debt_percent"
+                                    >
+                                      <span class="span-text-debt_percent"
+                                        >0%</span
+                                      >
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="childs">
-                                  <div
-                                    class="circle-small addition-parentheses-start"
-                                  >
-                                    <div class="text">
-                                      <small>Risk-Free Rate</small>
+                                <div class="equals">=</div>
+                                <div class="rumus__item">
+                                  <div class="circle">
+                                    <div class="text text-debt_percent">
+                                      <span>WACC</span>
                                     </div>
-                                    <div class="value"><span>1.6%</span></div>
-                                  </div>
-                                  <div class="circle-small multiplication">
-                                    <div class="text"><small>Beta</small></div>
-                                    <div class="value"><span>1.2</span></div>
-                                  </div>
-                                  <div
-                                    class="circle-small addition-parentheses-end"
-                                  >
-                                    <div class="text">
-                                      <small>Equity Risk Premium</small>
-                                    </div>
-                                    <div class="value"><span>4.2%</span></div>
-                                  </div>
-                                  <div class="circle-small dashed addition">
-                                    <div class="text">
-                                      <span>Country risk premium</span>
-                                    </div>
-                                  </div>
-                                  <div class="circle-small dashed">
-                                    <div class="text">
-                                      <span
-                                        >Small cap <br />
-                                        premium</span
+                                    <div
+                                      style="display: none"
+                                      class="value value-text-debt_percent"
+                                    >
+                                      <span class="span-text-debt_percent"
+                                        >0%</span
                                       >
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                              <div class="rumus__item grouped-end">
-                                <div class="circle">
-                                  <div class="text"><span>% equity</span></div>
-                                  <div class="value"><span>95%</span></div>
-                                </div>
-                              </div>
-                              <div class="rumus__item equals">
-                                <div class="circle total">
-                                  <div class="text"><span>6.0%</span></div>
-                                </div>
-                              </div>
+                            </div>
+                            <div class="col-12 mt-4">
+                              <h3 class="text-center">
+                                Your WACCFinderTM result is 6.0%
+                              </h3>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="calculator__action text-center">
-                        <div class="container">
-                          <div class="row justify-content-center">
-                            <div class="col-lg-6 col-md-8">
-                              <div class="section__heading"></div>
-                              <div class="section__subtitle wacc-total-results">
-                                <p>
-                                  Your WACCFinder<sup>TM</sup> result is 6.0%
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      </section>
                     </div>
-                    <div class="modal-footer text-center">
+                    <div class="modal-footer text-center bg-wacc-blue-black">
                       <a
-                        class="btn btn__primary"
+                        class="btn btn-deactivate"
                         href="#"
-                        data-dismiss="modal"
+                        data-bs-dismiss="modal"
                         aria-label="close"
                         >Close</a
                       >
@@ -441,14 +400,14 @@
                   </div>
                 </div>
               </div>
-              <div class="modal modalAddCVA" id="modalAddCVA94" tabindex="-1">
+              <div class="modal modalAddCVA" id="modalAddCVA" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                   <div class="modal-content">
                     <div class="modal-header">
                       <div
                         class="btn-close"
                         href="#"
-                        data-dismiss="modal"
+                        data-bs-dismiss="modal"
                         aria-label="close"
                       >
                         <img
@@ -541,7 +500,11 @@
                   </div>
                 </div>
               </div>
-              <div class="modal modalRename" id="modalRename94" tabindex="-1">
+              <div
+                class="modal wacc-rename-view"
+                id="wacc-rename-view"
+                tabindex="-1"
+              >
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -549,7 +512,7 @@
                       <div
                         class="btn-close"
                         href="#"
-                        data-dismiss="modal"
+                        data-bs-dismiss="modal"
                         aria-label="close"
                       >
                         <img
@@ -565,7 +528,9 @@
                           value="Nnv2Bbsb1ATGhw7iIhTKzrfVeWnVgnAdT2qT4VB4"
                         />
                         <div class="form-group">
-                          <label>Calculation name</label>
+                          <label class="fw-bold fs-3 mb-3"
+                            >Calculation name</label
+                          >
                           <input
                             name="wacc_name"
                             class="form-control"
@@ -574,15 +539,15 @@
                             placeholder="Type WACC Name"
                           />
                         </div>
-                        <div class="form-action text-right">
+                        <div class="form-action mt-4">
                           <a
-                            class="btn btn__border"
+                            class="btn btn-deactivate"
                             href="#"
-                            data-dismiss="modal"
+                            data-bs-dismiss="modal"
                             aria-label="close"
                             >Cancel</a
                           >
-                          <button class="btn btn__primary" type="submit">
+                          <button class="btn btn-brown-gold" type="submit">
                             Save
                           </button>
                         </div>
@@ -591,7 +556,11 @@
                   </div>
                 </div>
               </div>
-              <div class="modal modalConfirm" id="modalDelWACC94" tabindex="-1">
+              <div
+                class="modal wacc-delete-view"
+                id="wacc-delete-view"
+                tabindex="-1"
+              >
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -599,7 +568,7 @@
                       <div
                         class="btn-close"
                         href="#"
-                        data-dismiss="modal"
+                        data-bs-dismiss="modal"
                         aria-label="close"
                       >
                         <img
@@ -614,14 +583,14 @@
                       </p>
                     </div>
                     <div class="modal-footer">
-                      <div class="form-action text-right">
+                      <div class="form-action">
                         <a
-                          class="btn btn__border"
+                          class="btn btn-brown-gold me-2"
                           href="#"
-                          data-dismiss="modal"
+                          data-bs-dismiss="modal"
                           aria-label="close"
                           >Cancel</a
-                        ><a class="btn btn__primary" href="/delete-wacc/94"
+                        ><a class="btn btn-deactivate" href="/delete-wacc/94"
                           >Delete</a
                         >
                       </div>
