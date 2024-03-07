@@ -154,7 +154,7 @@ ol {
 
 ul,
 ol {
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 p {
@@ -564,7 +564,7 @@ header #hamburger-icon {
   width: 100%;
   height: 2.5rem;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.5em;
   font-weight: 400;
   color: #121820;
@@ -768,7 +768,7 @@ header #hamburger-icon {
   width: 100%;
   height: 2.5rem;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.5em;
   font-weight: 400;
   color: #000;
@@ -844,7 +844,7 @@ header #hamburger-icon {
   min-width: 10rem;
   padding: 0;
   margin: 0.125rem 0 0;
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: #000;
   text-align: left;
   list-style: none;
@@ -934,7 +934,7 @@ header #hamburger-icon {
   min-width: 10rem;
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: #000;
   text-align: left;
   list-style: none;
@@ -988,7 +988,7 @@ header #hamburger-icon {
   width: 100%;
   height: 2.5rem;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.5em;
   font-weight: 400;
   color: #2c2c2c;
@@ -1046,7 +1046,7 @@ header #hamburger-icon {
   width: 100%;
   height: 2.5rem;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.5em;
   font-family: "Graphik", sans-serif;
   font-weight: 400;
@@ -1251,7 +1251,7 @@ header #hamburger-icon {
   padding-right: 10px;
 }
 #select-plan .plan__packets .plan__card .plan__card-body .plan__card-list > ul > li {
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.6rem;
   color: #2c2c2c;
   padding-left: 2rem;
@@ -1268,7 +1268,7 @@ header #hamburger-icon {
   left: 0;
 }
 #select-plan .plan__packets .plan__card .plan__card-body .plan__card-list > ul li {
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.6rem;
   color: #2c2c2c;
 }
@@ -1400,7 +1400,7 @@ header #hamburger-icon {
   margin-bottom: 1rem;
 }
 #login-footer .footer__top p {
-  font-size: 16px;
+  font-size: 1.125rem;
   color: #fff;
 }
 #login-footer .footer__logo img {
@@ -1408,7 +1408,7 @@ header #hamburger-icon {
   display: block;
 }
 #login-footer .footer__note p {
-  font-size: 16px;
+  font-size: 1.125rem;
   color: #fff;
 }
 
@@ -1511,7 +1511,7 @@ header #hamburger-icon {
     padding: 4rem 0;
   }
   .wacc-btn {
-    font-size: 1rem !important;
+    font-size: 1.125rem !important;
     max-width: 260px !important;
   }
   .wacc-btn-sub {
@@ -1620,7 +1620,7 @@ header #hamburger-icon {
     margin-bottom: 1rem;
   }
   .subheading {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
   .wacc-btn {
     max-width: 320px;
@@ -1643,7 +1643,7 @@ header #hamburger-icon {
     margin: 0.5rem 0 1rem;
   }
   #hero p {
-    font-size: 1.05rem;
+    font-size: 1.125rem;
     font-weight: 500;
   }
   #hero iframe {
