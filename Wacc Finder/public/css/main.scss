@@ -4,7 +4,8 @@ $wacc-red: #640000;
 
 $text-color: #2c2c2c;
 $text-color-light: #3d3d3d;
-$brown-gold: rgb(181, 145, 79);
+$brown-gold: #b5914f;
+$brown-gold-darker: #7a6131;
 $azure-white: #d6e7ee;
 $pale-cerulean: rgb(151, 202, 219, 0.6);
 $form-outline: rgba(181, 145, 79, 0.25);
@@ -203,6 +204,10 @@ p {
 
 .list-position-inside {
   list-style-position: outside;
+}
+
+.text-red {
+  color: $wacc-red;
 }
 
 .uncheck-icon-list {
@@ -1520,6 +1525,137 @@ header {
     .addition,
     .equals {
       font-size: 36px;
+    }
+  }
+}
+
+/**
+* Activation Page CSS
+*/
+#activation {
+  .activation {
+    padding: 7rem 0;
+    height: 100%;
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    .auth__login-logo {
+      img {
+        max-height: 3rem;
+        display: block;
+        margin: 0 auto 2.5rem;
+      }
+    }
+    .auth__stepper {
+      margin-bottom: 2.5rem;
+      .step {
+        text-align: center;
+        color: #8a8a8a;
+        position: relative;
+        .number {
+          display: block;
+          width: 2rem;
+          height: 2rem;
+          margin: 0 auto 0.5rem;
+          padding: 0.25rem 0.6875rem;
+          border: 1px solid #8a8a8a;
+          border-radius: 50px;
+        }
+        &.current {
+          color: #fff;
+          .number {
+            background: $brown-gold;
+            border-color: $brown-gold;
+            color: #fff;
+          }
+        }
+        &:after {
+          content: "";
+          width: calc(100% - 2.625rem);
+          height: 1px;
+          background: #000;
+          position: absolute;
+          top: 0.9375rem;
+          left: calc(100% - 1.5625rem);
+        }
+      }
+      .col-lg-4 {
+        &:last-child {
+          .step {
+            &::after {
+              content: unset;
+            }
+          }
+        }
+      }
+    }
+    .auth__notiftext {
+      text-align: center;
+      h3 {
+        margin-bottom: 1rem;
+        background: linear-gradient(
+          90deg,
+          $brown-gold 0%,
+          $brown-gold-darker 87.68%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+      b {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      sup {
+        top: -0.7em;
+      }
+    }
+    &.activation-step-1 {
+    }
+    &.activation-step-2 {
+      .auth__verifcode {
+        text-align: center;
+        padding-top: 2rem;
+        .form-group {
+          margin-bottom: 1.5rem;
+          position: relative;
+          label {
+            padding-bottom: 0.75rem;
+          }
+          .row {
+            margin: 0 auto;
+            max-width: 14rem;
+            .col {
+              padding-left: 0.5rem;
+              padding-right: 0.5rem;
+              .form-control {
+                width: 2.5rem;
+                height: 2.5rem;
+                margin-right: 0;
+                border-radius: 50px;
+                padding: 0.5rem;
+                text-align: center;
+              }
+            }
+          }
+        }
+        .auth__verifcode .resend {
+          color: #8a8a8a;
+        }
+      }
+    }
+    &.activation-final {
+      p {
+        margin: 0 0 1.5rem;
+      }
     }
   }
 }
