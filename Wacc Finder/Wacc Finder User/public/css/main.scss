@@ -276,6 +276,18 @@ form {
     border-color: $brown-gold;
   }
 
+  input {
+    &[type="number"] {
+      -moz-appearance: textfield; /* Firefox */
+      appearance: textfield; /* Most modern browsers */
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+
   input,
   select {
     &.error {
