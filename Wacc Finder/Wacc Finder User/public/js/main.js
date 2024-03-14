@@ -510,12 +510,18 @@ $(document).ready(function () {
       // Calculation for #calc6
       if (currentTabId === "calc6") {
         // Inside #calc6 calculation
-        var countryValue = parseFloat(formData.country) / 100; // Convert to decimal
-        var currencyValue = parseFloat(formData.currency) / 100; // Convert to decimal, if it's a percentage
-        var industryValue = parseFloat(formData.industry) / 100; // Convert to decimal
-        var costOfEquity = (countryValue + currencyValue * industryValue) * 100; // Result back to percentage for display
+        var countryValue = parseFloat(formData.country.replace("%", "")) / 100; // Convert to decimal
+        var currencyValue =
+          parseFloat(formData.currency.replace("%", "")) / 100; // Convert to decimal, if it's a percentage
+        var industryValue = parseFloat(formData.industry); // Convert to decimal
+        var costOfEquity = (currencyValue + industryValue * countryValue) * 100; // Result back to percentage for display
+        // Apply custom rounding
+        costOfEquity = custom_calc(costOfEquity);
+        costOfEquity = costOfEquity.endsWith(".0")
+          ? costOfEquity.slice(0, -2)
+          : costOfEquity; // Remove trailing ".0"
         $(".span-cost_of_equity")
-          .text(costOfEquity.toFixed(2) + "%")
+          .text(costOfEquity + "%")
           .parent()
           .show();
       }
@@ -525,9 +531,16 @@ $(document).ready(function () {
         // Inside #calc8 calculation
         var preTaxValue = parseFloat(formData.preTaxCostOfDebt) / 100; // Convert to decimal
         var taxValue = parseFloat(formData.corporateTaxRate) / 100; // Convert to decimal
-        var costOfDebt = preTaxValue * taxValue * 100; // Convert result back to percentage
+        var costOfDebt = preTaxValue * (1 - taxValue) * 100; // Convert result back to percentage
+
+        console.log(costOfDebt);
+        // Apply custom rounding
+        costOfDebt = custom_calc(costOfDebt);
+        costOfDebt = costOfDebt.endsWith(".0")
+          ? costOfDebt.slice(0, -2)
+          : costOfDebt; // Remove trailing ".0"
         $(".span-cost_of_debt")
-          .text(costOfDebt.toFixed(2) + "%")
+          .text(costOfDebt + "%")
           .parent()
           .show();
       }
@@ -541,12 +554,21 @@ $(document).ready(function () {
         // Inside #calc9 setting values
         var percentDebt = parseFloat(formData.debtPercentage); // Already a percentage, no need to divide by 100 for display
 
+        // Apply custom rounding to displayed percentages
+        var rounded_percentDebt = custom_calc(percentDebt);
+        var rounded_percentEquity = custom_calc(100 - percentDebt);
+        rounded_percentDebt = rounded_percentDebt.endsWith(".0")
+          ? rounded_percentDebt.slice(0, -2)
+          : rounded_percentDebt; // Remove trailing ".0"
+        rounded_percentEquity = rounded_percentEquity.endsWith(".0")
+          ? rounded_percentEquity.slice(0, -2)
+          : rounded_percentEquity; // Remove trailing ".0"
         $(".span-percentage_debt")
-          .text(percentDebt.toFixed(2) + "%")
+          .text(rounded_percentDebt + "%")
           .parent()
           .show();
         $(".span-percentage_equity")
-          .text((100 - percentDebt).toFixed(2) + "%")
+          .text(rounded_percentEquity + "%")
           .parent()
           .show();
 
@@ -554,14 +576,38 @@ $(document).ready(function () {
         var spanPercentageDebt = percentDebt / 100; // Convert to decimal for calculation
         var spanPercentageEquity = (100 - percentDebt) / 100; // Convert to decimal for calculation
 
-        // Assuming spanCostOfEquity and spanCostOfDebt need to be used as is if they are already calculated as percentages
         var wacc =
           spanCostOfEquity * spanPercentageEquity +
           spanCostOfDebt * spanPercentageDebt; // Result is a percentage
+        // Apply custom rounding to WACC result
+        wacc = custom_calc(wacc);
         $(".span-wacc_total")
-          .text(wacc.toFixed(2) + "%")
+          .text(wacc + "%")
           .parent()
           .show();
+        $(".result")
+          .text(wacc + "%")
+          .parent()
+          .show();
+      }
+    }
+
+    function custom_calc(val) {
+      var val = parseFloat(val).toFixed(2);
+      (str = val.toString()), (srch = str.indexOf("."));
+      if (srch > 0) {
+        var splt = str.split(".");
+        if (parseFloat(splt[1]) >= 75) {
+          return Math.ceil(val);
+        } else if (parseFloat(splt[1]) >= 50 && parseFloat(splt[1]) <= 75) {
+          return splt[0] + ".5";
+        } else if (parseFloat(splt[1]) >= 25 && parseFloat(splt[1]) <= 50) {
+          return splt[0] + ".5";
+        } else {
+          return splt[0] + ".0";
+        }
+      } else {
+        return val;
       }
     }
 
