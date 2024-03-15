@@ -494,14 +494,20 @@ $(document).ready(function () {
   }
 
   /**
-   * Multistep Form
+   * Multistep Form / Free User
    */
-  if ($(".calculator__action").length > 0) {
+  if ($(".calculator__action.freeUser").length > 0) {
     $(".rumus__item .circle .value").hide();
 
     $("#country, #pre_tax, #percent_debt").on("change", function () {
       $(".cost_of_equity").addClass("highlight");
     });
+
+    function populateHiddenFields() {
+      $("#hidden_duration").val(formData.duration);
+      $("#hidden_month").val(formData.valuationDate.month);
+      $("#hidden_year").val(formData.valuationDate.year);
+    }
 
     function updateCalculations() {
       var $currentTab = $(".tab-pane.active");
@@ -524,6 +530,7 @@ $(document).ready(function () {
           .text(costOfEquity + "%")
           .parent()
           .show();
+        $("#hidden_costOfEquity").val(costOfEquity);
       }
 
       // Calculation for #calc8
@@ -543,6 +550,7 @@ $(document).ready(function () {
           .text(costOfDebt + "%")
           .parent()
           .show();
+        $("#hidden_costOfDebt").val(costOfDebt);
       }
 
       // Setting values for #calc9
@@ -571,6 +579,8 @@ $(document).ready(function () {
           .text(rounded_percentEquity + "%")
           .parent()
           .show();
+        $("#hidden_percentDebt").val(rounded_percentDebt);
+        $("#hidden_percentEquity").val(rounded_percentEquity);
 
         // When using percentDebt in calculations, convert to decimal
         var spanPercentageDebt = percentDebt / 100; // Convert to decimal for calculation
@@ -589,6 +599,10 @@ $(document).ready(function () {
           .text(wacc + "%")
           .parent()
           .show();
+        $("#hidden_wacc").val(wacc);
+
+        //Final Values
+        populateHiddenFields();
       }
     }
 
@@ -746,6 +760,378 @@ $(document).ready(function () {
         },
         industri: {
           required: "Please select an Industry",
+        },
+        pre_tax: {
+          required: "Please enter a value",
+        },
+        tax: {
+          required: "Please enter a value",
+        },
+        percent_debt: {
+          required: "Please enter a value",
+        },
+      },
+    });
+    // Function to check if current tab's inputs are valid
+    function validateCurrentTab() {
+      var isValid = true;
+      var $currentTab = $(".tab-pane.active");
+      // Validate only the inputs in the current tab
+      $currentTab.find(":input").each(function () {
+        if (!$(this).valid()) {
+          isValid = false;
+          return false; // Exit the loop
+        }
+      });
+      return isValid;
+    }
+
+    $(".form-action .btn, .nexttab").click(function (e) {
+      // Prevent form submission
+      e.preventDefault();
+      // Check if the current tab is valid
+      if (validateCurrentTab()) {
+        // Find current and next tab panels
+        var $currentTabPanel = $(this).closest(".tab-pane");
+        var $nextTabPanel = $currentTabPanel.next(".tab-pane");
+
+        captureFormData();
+
+        if ($nextTabPanel.length) {
+          // Activate next tab
+          var nextTabId = $nextTabPanel.attr("id");
+          $('[href="#' + nextTabId + '"]').tab("show");
+          // Introduce a delay before updating calculations.
+          setTimeout(function () {
+            updateCalculations();
+          }, 100); // 100 milliseconds delay.
+        }
+        updateNavigationButtons();
+      }
+    });
+
+    $(".nexttab").on("click", function (e) {
+      // Prevent default action
+      e.preventDefault();
+
+      var activeTabPanel = $(".tab-pane.active");
+      // Temporarily setting all inputs in inactive tabs to be ignored by the validator
+      var $inactiveInputs = $("#frm_calc .tab-pane")
+        .not(".active")
+        .find(":input")
+        .addClass("ignore-validation");
+
+      if ($("#frm_calc").valid()) {
+        // Validate the entire form, but with ignored inputs on inactive tabs
+        var nextTabPanel = activeTabPanel.next(".tab-pane");
+        if (nextTabPanel.length && !$(this).hasClass("disabled")) {
+          var nextTabId = nextTabPanel.attr("id");
+          $('[href="#' + nextTabId + '"]').tab("show");
+          updateNavigationButtons();
+        }
+      }
+
+      // Revert ignoring inputs in inactive tabs
+      $inactiveInputs.removeClass("ignore-validation");
+      // Update validation for current tab
+      $("#frm_calc").validate().element(".tab-pane.active :input");
+    });
+
+    $(".prevtab").click(function () {
+      var $currentTabPanel = $(".tab-pane.active");
+      var $prevTabPanel = $currentTabPanel.prev(".tab-pane");
+      if ($prevTabPanel.length) {
+        // Activate previous tab
+        var prevTabId = $prevTabPanel.attr("id");
+        $('[href="#' + prevTabId + '"]').tab("show");
+        updateNavigationButtons();
+      }
+    });
+
+    updateNavigationButtons();
+  }
+
+  /**
+   * Multistep Form / Premium User
+   */
+  if ($(".calculator__action.premiumUser").length > 0) {
+    $(".rumus__item .circle .value").hide();
+
+    $("#country, #pre_tax, #percent_debt").on("change", function () {
+      $(".cost_of_equity").addClass("highlight");
+    });
+
+    function populateHiddenFields() {
+      $("#hidden_duration").val(formData.duration);
+      $("#hidden_month").val(formData.valuationDate.month);
+      $("#hidden_year").val(formData.valuationDate.year);
+    }
+
+    function updateCalculations() {
+      var $currentTab = $(".tab-pane.active");
+      var currentTabId = $currentTab.attr("id");
+
+      // Calculation for #calc7
+      if (currentTabId === "calc7") {
+        // Inside #calc6 calculation
+        var countryValue = parseFloat(formData.country.replace("%", "")) / 100;
+        var smallValue = parseFloat(formData.small.replace("%", "")) / 100;
+        var currencyValue =
+          parseFloat(formData.currency.replace("%", "")) / 100;
+        var industryValue = parseFloat(formData.industry);
+
+        var costOfEquity =
+          (currencyValue + industryValue * countryValue + smallValue) * 100;
+
+        // Apply custom rounding
+        costOfEquity = custom_calc(costOfEquity);
+        costOfEquity = costOfEquity.endsWith(".0")
+          ? costOfEquity.slice(0, -2)
+          : costOfEquity; // Remove trailing ".0"
+        $(".span-cost_of_equity")
+          .text(costOfEquity + "%")
+          .parent()
+          .show();
+        $("#hidden_costOfEquity").val(costOfEquity);
+      }
+
+      // Calculation for #calc9
+      if (currentTabId === "calc9") {
+        // Inside #calc8 calculation
+        var preTaxValue = parseFloat(formData.preTaxCostOfDebt) / 100;
+        var taxValue = parseFloat(formData.corporateTaxRate) / 100;
+
+        var costOfDebt = preTaxValue * (1 - taxValue) * 100;
+
+        // Apply custom rounding
+        costOfDebt = custom_calc(costOfDebt);
+        costOfDebt = costOfDebt.endsWith(".0")
+          ? costOfDebt.slice(0, -2)
+          : costOfDebt; // Remove trailing ".0"
+        $(".span-cost_of_debt")
+          .text(costOfDebt + "%")
+          .parent()
+          .show();
+        $("#hidden_costOfDebt").val(costOfDebt);
+      }
+
+      // Setting values for #calc10
+      if (currentTabId === "calc10") {
+        // Inside #calc9 setting values or right before the WACC calculation
+        var spanCostOfEquity = parseFloat($(".span-cost_of_equity").text()); // Retrieve and parse to float
+        var spanCostOfDebt = parseFloat($(".span-cost_of_debt").text()); // Retrieve and parse to float
+
+        // Inside #calc9 setting values
+        var percentDebt = parseFloat(formData.debtPercentage); // Already a percentage, no need to divide by 100 for display
+
+        // Apply custom rounding to displayed percentages
+        var rounded_percentDebt = custom_calc(percentDebt);
+        var rounded_percentEquity = custom_calc(100 - percentDebt);
+        rounded_percentDebt = rounded_percentDebt.endsWith(".0")
+          ? rounded_percentDebt.slice(0, -2)
+          : rounded_percentDebt; // Remove trailing ".0"
+        rounded_percentEquity = rounded_percentEquity.endsWith(".0")
+          ? rounded_percentEquity.slice(0, -2)
+          : rounded_percentEquity; // Remove trailing ".0"
+        $(".span-percentage_debt")
+          .text(rounded_percentDebt + "%")
+          .parent()
+          .show();
+        $(".span-percentage_equity")
+          .text(rounded_percentEquity + "%")
+          .parent()
+          .show();
+        $("#hidden_percentDebt").val(rounded_percentDebt);
+        $("#hidden_percentEquity").val(rounded_percentEquity);
+
+        // When using percentDebt in calculations, convert to decimal
+        var spanPercentageDebt = percentDebt / 100; // Convert to decimal for calculation
+        var spanPercentageEquity = (100 - percentDebt) / 100; // Convert to decimal for calculation
+
+        var wacc =
+          spanCostOfEquity * spanPercentageEquity +
+          spanCostOfDebt * spanPercentageDebt; // Result is a percentage
+        // Apply custom rounding to WACC result
+        wacc = custom_calc(wacc);
+        $(".span-wacc_total")
+          .text(wacc + "%")
+          .parent()
+          .show();
+        $(".result")
+          .text(wacc + "%")
+          .parent()
+          .show();
+        $("#hidden_wacc").val(wacc);
+
+        //Final Values
+        populateHiddenFields();
+      }
+    }
+
+    function custom_calc(val) {
+      var val = parseFloat(val).toFixed(2);
+      (str = val.toString()), (srch = str.indexOf("."));
+      if (srch > 0) {
+        var splt = str.split(".");
+        if (parseFloat(splt[1]) >= 75) {
+          return Math.ceil(val);
+        } else if (parseFloat(splt[1]) >= 50 && parseFloat(splt[1]) <= 75) {
+          return splt[0] + ".5";
+        } else if (parseFloat(splt[1]) >= 25 && parseFloat(splt[1]) <= 50) {
+          return splt[0] + ".5";
+        } else {
+          return splt[0] + ".0";
+        }
+      } else {
+        return val;
+      }
+    }
+
+    // Ensure to call `updateCalculations()` inside your tab navigation code, after setting the current tab.
+
+    var formData = {
+      duration: null,
+      valuationDate: {
+        month: null,
+        year: null,
+      },
+      country: null,
+      currency: null,
+      industry: null,
+      small: null,
+      preTaxCostOfDebt: null,
+      corporateTaxRate: null,
+      debtPercentage: null,
+      // Add more fields as necessary
+    };
+
+    function updateNavigationButtons() {
+      const totalTabs = $(".calculator__action .nav-item").length;
+      const activeTabIndex =
+        $(".calculator__action .nav-item .nav-link.active").parent().index() +
+        1; // Index is 0-based
+
+      // Enable/disable prevtab button
+      if (activeTabIndex === 1) {
+        $(".prevtab").addClass("disabled");
+      } else {
+        $(".prevtab").removeClass("disabled");
+      }
+
+      // Enable/disable nexttab button
+      if (activeTabIndex === totalTabs) {
+        $(".nexttab").addClass("disabled");
+      } else {
+        $(".nexttab").removeClass("disabled");
+      }
+
+      // Update progress bar
+      updateProgressBar(activeTabIndex, totalTabs);
+    }
+
+    function updateProgressBar(currentTabIndex, totalTabs) {
+      var progressPercentage = (currentTabIndex / totalTabs) * 100;
+      $(".progress-bar").css("width", progressPercentage + "%");
+    }
+
+    function captureFormData() {
+      var $currentTab = $(".tab-pane.active");
+      var currentTabId = $currentTab.attr("id");
+
+      switch (currentTabId) {
+        case "calc1":
+          formData.duration = $("#duration").val();
+          break;
+        case "calc2":
+          formData.valuationDate.month = $("#month").val();
+          formData.valuationDate.year = $("#year").val();
+          break;
+        case "calc3":
+          formData.country = $("#country").val();
+          break;
+        case "calc4":
+          formData.currency = $("#currency").val();
+          break;
+        case "calc5":
+          formData.industry = $("#industri").val();
+          break;
+        case "calc6":
+          formData.small = $("#small").val();
+          break;
+        case "calc7":
+          formData.preTaxCostOfDebt = $("#pre_tax").val();
+          break;
+        case "calc8":
+          formData.corporateTaxRate = $("#tax").val();
+          break;
+        case "calc9":
+          formData.debtPercentage = $("#percent_debt").val();
+          break;
+        // Add cases for additional steps
+        default:
+          break;
+      }
+
+      console.log("Capturing data for tab: ", currentTabId);
+      console.log("Captured Data: ", formData);
+    }
+
+    // Initialize the jQuery Validation Plugin on the form
+    $("#frm_calc").validate({
+      // Validation rules,
+      rules: {
+        duration: {
+          required: true,
+        },
+        month: {
+          required: true,
+        },
+        year: {
+          required: true,
+        },
+        country: {
+          required: true,
+        },
+        currency: {
+          required: true,
+        },
+        industri: {
+          required: true,
+        },
+        small: {
+          required: true,
+        },
+        pre_tax: {
+          required: true,
+        },
+        tax: {
+          required: true,
+        },
+        percent_debt: {
+          required: true,
+        },
+      },
+      messages: {
+        duration: {
+          required: "Please select a Duration",
+        },
+        month: {
+          required: "Please select a Month",
+        },
+        year: {
+          required: "Please select a Year",
+        },
+        country: {
+          required: "Please select a Country",
+        },
+        currency: {
+          required: "Please select a Currency",
+        },
+        industri: {
+          required: "Please select an Industry",
+        },
+        small: {
+          required: "Please select a Small Cap Premium",
         },
         pre_tax: {
           required: "Please enter a value",
