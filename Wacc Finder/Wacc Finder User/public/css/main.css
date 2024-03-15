@@ -1076,6 +1076,49 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 #wacc .wacc__card .wacc__card-mid {
   margin-bottom: 1rem;
 }
+#wacc .create-report-modal-trigger {
+  display: none !important;
+}
+#wacc.premiumUser .create-report-modal-trigger {
+  display: block !important;
+}
+#wacc.premiumUser #modalReportTable .report-title {
+  margin-bottom: 2rem;
+}
+#wacc.premiumUser #modalReportTable .report-title h4 {
+  color: #121820;
+}
+#wacc.premiumUser #modalReportTable .report-title p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #000;
+}
+#wacc.premiumUser #modalReportTable .report-title p sup {
+  top: -0.7em;
+}
+#wacc.premiumUser #modalReportTable .report-table {
+  margin-bottom: 2rem;
+}
+#wacc.premiumUser #modalReportTable .report-table table {
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 100%;
+}
+#wacc.premiumUser #modalReportTable .report-table table tr.subtitle {
+  background: #b5914f;
+  color: #fff;
+}
+#wacc.premiumUser #modalReportTable .report-table table th {
+  background: #b5914f;
+  color: #fff;
+  width: 33.3333333333%;
+  padding: 0.5rem 0.75rem;
+}
+#wacc.premiumUser #modalReportTable .report-table table td {
+  border-bottom: 1px solid #9da2ab;
+  padding: 0.5rem 0.75rem;
+}
 
 /**
 * Security Page CSS

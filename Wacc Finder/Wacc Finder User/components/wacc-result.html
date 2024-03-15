@@ -204,7 +204,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-8" id="wacc">
+          <div class="col-lg-8 premiumUser" id="wacc">
             <div class="upsell-banner">
               <div class="row">
                 <div class="col-md-9">
@@ -260,6 +260,13 @@
                           data-bs-toggle="modal"
                           data-bs-target="#wacc-rename-view"
                           >Rename</a
+                        >
+                        <a
+                          class="dropdown-item create-report-modal-trigger"
+                          href="#"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalReportTable"
+                          >Add a WACCFinder<sup>TM</sup> Report</a
                         >
                         <a
                           class="dropdown-item"
@@ -526,6 +533,104 @@
                           </button>
                         </div>
                       </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="modal reportTable"
+                id="modalReportTable"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <div
+                        class="btn-close"
+                        href="#"
+                        data-bs-dismiss="modal"
+                        aria-label="close"
+                      ></div>
+                    </div>
+                    <div class="modal-body text-center">
+                      <div class="report-title">
+                        <h4>Add A WACCFinder<sup>TM</sup> Report</h4>
+                        <p>
+                          Please note that WACCFinderTM Online and
+                          WACCFinder<sup>TM</sup> Report may provide different
+                          results.
+                        </p>
+                      </div>
+                      <div class="report-table">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Service</th>
+                              <th>WACCFinder<sup>TM</sup> Online</th>
+                              <th>WACCFinder<sup>TM</sup> Report</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Best for</td>
+                              <td>Self-Service</td>
+                              <td>Full-Service</td>
+                            </tr>
+                            <tr>
+                              <td>Speed</td>
+                              <td>Real-time</td>
+                              <td>Consultation</td>
+                            </tr>
+                            <tr>
+                              <td>Mode</td>
+                              <td>Online</td>
+                              <td>Bespoke</td>
+                            </tr>
+                            <tr>
+                              <td>Output</td>
+                              <td>Screen</td>
+                              <td>WACCFinder<sup>TM</sup> Report</td>
+                            </tr>
+                            <tr>
+                              <td>WACCFinder<sup>TM</sup> Formula</td>
+                              <td>Extended</td>
+                              <td>Extended</td>
+                            </tr>
+                            <tr class="subtitle">
+                              <td colspan="3">WACCFinderTM Inputs</td>
+                            </tr>
+                            <tr>
+                              <td>Risk-Free Rate</td>
+                              <td>Single Currency, Single Country</td>
+                              <td>Multi-Currency, Multi-Country</td>
+                            </tr>
+                            <tr>
+                              <td>Beta</td>
+                              <td>Industry Beta</td>
+                              <td>Hamada Adjusted Beta</td>
+                            </tr>
+                            <tr>
+                              <td>Debt To Equity Ratio</td>
+                              <td>Target Debt To Equity Ratio</td>
+                              <td>
+                                Guideline Public Companies Debt To Equity Ratio
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Source Documents</td>
+                              <td>No</td>
+                              <td>Yes</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="form-action text-right">
+                        <a class="btn btn-brown-gold" href="create-report.html"
+                          >Continue</a
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>

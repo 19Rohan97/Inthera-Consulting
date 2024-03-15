@@ -1183,6 +1183,55 @@ form {
       margin-bottom: 1rem;
     }
   }
+  .create-report-modal-trigger {
+    display: none !important;
+  }
+  &.premiumUser {
+    .create-report-modal-trigger {
+      display: block !important;
+    }
+    #modalReportTable {
+      .report-title {
+        margin-bottom: 2rem;
+        h4 {
+          color: $blue-black;
+        }
+        p {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: $text-color;
+          sup {
+            top: -0.7em;
+          }
+        }
+      }
+      .report-table {
+        margin-bottom: 2rem;
+        table {
+          text-align: left;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          width: 100%;
+          tr {
+            &.subtitle {
+              background: $brown-gold;
+              color: #fff;
+            }
+          }
+          th {
+            background: $brown-gold;
+            color: #fff;
+            width: calc(100% / 3);
+            padding: 0.5rem 0.75rem;
+          }
+          td {
+            border-bottom: 1px solid $input-border;
+            padding: 0.5rem 0.75rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 /**
