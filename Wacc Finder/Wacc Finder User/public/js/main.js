@@ -628,27 +628,6 @@ $(document).ready(function () {
       }
     }
 
-    // function custom_calc(val) {
-    //   var val = parseFloat(val).toFixed(2);
-    //   (str = val.toString()), (srch = str.indexOf("."));
-    //   if (srch > 0) {
-    //     var splt = str.split(".");
-    //     if (parseFloat(splt[1]) >= 75) {
-    //       return Math.ceil(val);
-    //     } else if (parseFloat(splt[1]) >= 50 && parseFloat(splt[1]) <= 75) {
-    //       return splt[0] + ".5";
-    //     } else if (parseFloat(splt[1]) >= 25 && parseFloat(splt[1]) <= 50) {
-    //       return splt[0] + ".5";
-    //     } else {
-    //       return splt[0] + ".0";
-    //     }
-    //   } else {
-    //     return val;
-    //   }
-    // }
-
-    // Ensure to call `updateCalculations()` inside your tab navigation code, after setting the current tab.
-
     var formData = {
       duration: null,
       valuationDate: {
@@ -893,40 +872,49 @@ $(document).ready(function () {
       var $currentTab = $(".tab-pane.active");
       var currentTabId = $currentTab.attr("id");
 
-      // Calculation for #calc7
+      // Calculation for #calc6
       if (currentTabId === "calc7") {
-        // Inside #calc6 calculation
-        var countryValue = parseFloat(formData.country.replace("%", "")) / 100;
-        var smallValue = parseFloat(formData.small.replace("%", "")) / 100;
+        // Inside #calc7 calculation
+        var countryValue = parseFloat(formData.country.replace("%", "")) / 100; // Convert to decimal
+        var smallValue = parseFloat(formData.small.replace("%", "")) / 100; // Convert to decimal
+        var countryRiskPremiumValue =
+          parseFloat(formData.countryRiskPremium.replace("%", "")) / 100; // Convert to decimal
         var currencyValue =
-          parseFloat(formData.currency.replace("%", "")) / 100;
-        var industryValue = parseFloat(formData.industry);
+          parseFloat(formData.currency.replace("%", "")) / 100; // Convert to decimal, if it's a percentage
+        var industryValue = parseFloat(formData.industry); // Convert to decimal
 
         var costOfEquity =
-          (currencyValue + industryValue * countryValue + smallValue) * 100;
-
+          (currencyValue +
+            industryValue * countryValue +
+            smallValue +
+            countryRiskPremiumValue) *
+          100; // Result back to percentage for display
         // Apply custom rounding
         costOfEquity = custom_calc(costOfEquity);
         costOfEquity = costOfEquity.endsWith(".0")
           ? costOfEquity.slice(0, -2)
           : costOfEquity; // Remove trailing ".0"
+
         $(".span-cost_of_equity")
           .text(costOfEquity + "%")
           .parent()
           .show();
+
         $("#hidden_costOfEquity").val(costOfEquity);
       }
 
       // Calculation for #calc9
       if (currentTabId === "calc9") {
         // Inside #calc8 calculation
-        var preTaxValue = parseFloat(formData.preTaxCostOfDebt) / 100;
-        var taxValue = parseFloat(formData.corporateTaxRate) / 100;
+        var preTaxValue = parseFloat(formData.preTaxCostOfDebt) / 100; // Convert to decimal
+        var taxValue = parseFloat(formData.corporateTaxRate) / 100; // Convert to decimal
+        var costOfDebt = preTaxValue * (1 - taxValue) * 100; // Convert result back to percentage
 
-        var costOfDebt = preTaxValue * (1 - taxValue) * 100;
-
+        console.log(costOfDebt);
         // Apply custom rounding
         costOfDebt = custom_calc(costOfDebt);
+        console.log(costOfDebt);
+
         costOfDebt = costOfDebt.endsWith(".0")
           ? costOfDebt.slice(0, -2)
           : costOfDebt; // Remove trailing ".0"
@@ -992,24 +980,23 @@ $(document).ready(function () {
 
     function custom_calc(val) {
       var val = parseFloat(val).toFixed(2);
-      (str = val.toString()), (srch = str.indexOf("."));
+      var str = val.toString();
+      var srch = str.indexOf(".");
       if (srch > 0) {
         var splt = str.split(".");
         if (parseFloat(splt[1]) >= 75) {
-          return Math.ceil(val);
+          return `${Math.ceil(val)}`;
         } else if (parseFloat(splt[1]) >= 50 && parseFloat(splt[1]) <= 75) {
-          return splt[0] + ".5";
+          return `${splt[0]}.5`;
         } else if (parseFloat(splt[1]) >= 25 && parseFloat(splt[1]) <= 50) {
-          return splt[0] + ".5";
+          return `${splt[0]}.5`;
         } else {
-          return splt[0] + ".0";
+          return `${splt[0]}.0`;
         }
       } else {
-        return val;
+        return val.toString();
       }
     }
-
-    // Ensure to call `updateCalculations()` inside your tab navigation code, after setting the current tab.
 
     var formData = {
       duration: null,
@@ -1021,6 +1008,7 @@ $(document).ready(function () {
       currency: null,
       industry: null,
       small: null,
+      countryRiskPremium: null,
       preTaxCostOfDebt: null,
       corporateTaxRate: null,
       debtPercentage: null,
@@ -1079,6 +1067,7 @@ $(document).ready(function () {
           break;
         case "calc6":
           formData.small = $("#small").val();
+          formData.countryRiskPremium = $("#countryRiskPremium").val();
           break;
         case "calc7":
           formData.preTaxCostOfDebt = $("#pre_tax").val();
@@ -1153,7 +1142,7 @@ $(document).ready(function () {
           required: "Please select an Industry",
         },
         small: {
-          required: "Please select a Small Cap Premium",
+          required: "Please select an value",
         },
         pre_tax: {
           required: "Please enter a value",

@@ -268,12 +268,8 @@
                                   id="duration"
                                   name="duration"
                                   class="form-select"
-                                  title="Select duration of cash flow"
                                 >
-                                  <option
-                                    class="bs-title-option"
-                                    value=""
-                                  ></option>
+                                  <option value="">Select a duration</option>
                                   <option value="5">1-5 years</option>
                                   <option value="10">5 years and above</option>
                                 </select>
@@ -310,10 +306,9 @@
                                     <select
                                       class="form-select"
                                       id="month"
-                                      title="Select month"
                                       name="month"
                                     >
-                                      <option value=""></option>
+                                      <option value="">Select month</option>
                                       <option value="January">January</option>
                                       <option value="February">February</option>
                                       <option value="March">March</option>
@@ -333,10 +328,9 @@
                                     <select
                                       class="form-select"
                                       id="year"
-                                      title="Select year"
                                       name="year"
                                     >
-                                      <option value=""></option>
+                                      <option value="">Select year</option>
                                       <option value="2022">2022</option>
                                       <option value="2021">2021</option>
                                       <option value="2020">2020</option>
@@ -590,12 +584,10 @@
                                   name="small"
                                   id="small"
                                   class="form-select"
-                                  title="Select small cap premium"
                                 >
-                                  <option
-                                    class="bs-title-option"
-                                    value=""
-                                  ></option>
+                                  <option value="">
+                                    Select small cap premium
+                                  </option>
                                   <option value="0%">
                                     Above USD 2,445.7mil
                                   </option>
@@ -609,6 +601,12 @@
                                     USD 2.2mil to USD 451.8mil
                                   </option>
                                 </select>
+                                <input
+                                  type="hidden"
+                                  name="countryRiskPremium"
+                                  id="countryRiskPremium"
+                                  value="0%"
+                                />
                               </div>
                               <div class="form-notes">
                                 <p>
