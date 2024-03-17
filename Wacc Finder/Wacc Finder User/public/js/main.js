@@ -543,6 +543,8 @@ $(document).ready(function () {
         console.log(costOfDebt);
         // Apply custom rounding
         costOfDebt = custom_calc(costOfDebt);
+        console.log(costOfDebt);
+
         costOfDebt = costOfDebt.endsWith(".0")
           ? costOfDebt.slice(0, -2)
           : costOfDebt; // Remove trailing ".0"
@@ -608,22 +610,42 @@ $(document).ready(function () {
 
     function custom_calc(val) {
       var val = parseFloat(val).toFixed(2);
-      (str = val.toString()), (srch = str.indexOf("."));
+      var str = val.toString();
+      var srch = str.indexOf(".");
       if (srch > 0) {
         var splt = str.split(".");
         if (parseFloat(splt[1]) >= 75) {
-          return Math.ceil(val);
+          return `${Math.ceil(val)}`;
         } else if (parseFloat(splt[1]) >= 50 && parseFloat(splt[1]) <= 75) {
-          return splt[0] + ".5";
+          return `${splt[0]}.5`;
         } else if (parseFloat(splt[1]) >= 25 && parseFloat(splt[1]) <= 50) {
-          return splt[0] + ".5";
+          return `${splt[0]}.5`;
         } else {
-          return splt[0] + ".0";
+          return `${splt[0]}.0`;
         }
       } else {
-        return val;
+        return val.toString();
       }
     }
+
+    // function custom_calc(val) {
+    //   var val = parseFloat(val).toFixed(2);
+    //   (str = val.toString()), (srch = str.indexOf("."));
+    //   if (srch > 0) {
+    //     var splt = str.split(".");
+    //     if (parseFloat(splt[1]) >= 75) {
+    //       return Math.ceil(val);
+    //     } else if (parseFloat(splt[1]) >= 50 && parseFloat(splt[1]) <= 75) {
+    //       return splt[0] + ".5";
+    //     } else if (parseFloat(splt[1]) >= 25 && parseFloat(splt[1]) <= 50) {
+    //       return splt[0] + ".5";
+    //     } else {
+    //       return splt[0] + ".0";
+    //     }
+    //   } else {
+    //     return val;
+    //   }
+    // }
 
     // Ensure to call `updateCalculations()` inside your tab navigation code, after setting the current tab.
 
